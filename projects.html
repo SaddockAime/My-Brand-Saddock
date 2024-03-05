@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My personal webpage">
     <meta name="author" content="Saddock Kabandana">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>HOME</title>
-    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/projects.css">
+    <title>Projects</title>
 </head>
 <body>
-    <div class="home">
-    <!-- *****************nav bar************************************* -->
-    <div class="nav">
+    <div class="projects">
+        <!-- *****************nav bar************************************* -->
+        <div class="nav">
         <div class="logo">
             <img src="images/SaddockAime.jpg" alt="">
             <p>Saddock</p>
@@ -32,16 +32,29 @@
                 <li><a href="#">Login</a></li>
             </ul>
         </div>
+        </div>
+
+        <!-- *******************projects************************************** -->
+        <p class="myProjects">My Projects</p>
+        <div class="myProjectsContents">
+            <img class="image1" src="images/smart-home-automation.jpg" alt="">
+            <div class="project-text">
+                <p class="project-text1">Smart Home Automation System</p>
+                <p class="project-text2">A Smart Home Automation System is a project that involves integrating various sensors, 
+                    actuators, and controllers to automate and remotely control home appliances and devices.</p>
+            </div>
+        </div>
+        <div class="myProjectsContents" id="content2">
+            <img class="image2" src="images/iot-based-health-monitoring-system.jpg" alt="">
+            <div class="project-text">
+                <p class="project-text1">IoT-based Health Monitoring System</p>
+                <p class="project-text2">An IoT-based Health Monitoring System is a project that involves creating a wearable
+                    device equipped with sensors to monitor vital signs and transmit the data wirelessly
+                    to a central database for analysis and visualization.</p>
+            </div>
+        </div>
     </div>
-    <!-- ********************intro*************************************** -->
-    <div class="intro">
-        <img src="images/SaddockAime.jpg" alt="">
-        <p class="name">Hey, I am <b>Saddock Kabandana</b></p><br>
-        <p class="text">I like working on the front-end of the web. This is my site, where I blog
-            and share whatever side projects I've been working on.</p>
-        <button type="submit">My Projects</button>
-    </div>
-    <!-- **********************footer************************************* -->
+    <!-- ******************************footer*********************************** -->
     <div class="footer">
         <div class="container">
             <div class="contact">
@@ -68,7 +81,5 @@
                  All rights Reserved.
         </div>
     </div>
-    </div>
-    
 </body>
 </html>
