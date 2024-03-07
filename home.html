@@ -22,7 +22,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <div class="list-iteam">
+        <div class="list-iteam" id="sidemenu">
             <ul class="iteams">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -30,13 +30,15 @@
                 <li><a href="#">Blogs</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Login</a></li>
+                <li><i class="fa fa-solid fa-bars" onclick="closemenu()"></i></li>
             </ul>
         </div>
+        <i class="fa fa-solid fa-bars" onclick="openmenu()"></i>
     </div>
     <!-- ********************intro*************************************** -->
     <div class="intro">
         <img src="images/SaddockAime.jpg" alt="">
-        <p class="name">Hey, I am <b>Saddock Kabandana</b></p><br>
+        <p class="name">Hey, I am <b>Saddock Kabandana</b></p></p><br>
         <p class="text">I like working on the front-end of the web. This is my site, where I blog
             and share whatever side projects I've been working on.</p>
         <button type="submit">My Projects</button>
@@ -50,16 +52,11 @@
             </div>
             <div class="social">
                 <div class="social1">
-                    <!-- <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-x-twitter"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-brands fa-square-github"></i> -->
-                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-github-square" ></i></a>
                 </div>
             </div>
         </div>
@@ -69,6 +66,15 @@
         </div>
     </div>
     </div>
+    <script>
+        var sideme = document.getElementById("sidemenu");
+        function openmenu(){
+            sideme.style.right = "0";
+        }
+        function closemenu(){
+            sideme.style.right = "-200px";
+        }
+    </script>
     
 </body>
 </html>
