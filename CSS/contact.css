@@ -89,3 +89,130 @@ body{
     width: 100%;
 }
 /* ***********************end of nav bar********************************** */
+
+.contactInfo{
+    justify-content: center;
+    margin-top: 100px;
+    color: #233742;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* position: absolute; */
+    width: 100%;
+    text-align: center;
+}
+.addform{
+    margin: auto;
+    text-align: center;
+}
+.contactIntro{
+    margin-bottom: 20px;
+}
+.add{
+    background-color: #233742;
+    color: #FFFFFF;
+    width: 500px;
+    height: 280px;
+    border-radius: 20px;
+    padding-top: 20px;
+
+}
+.label{
+    margin-top: 20px;
+}
+.contactIntro1{
+    font-size: 50px;
+    font-weight: bolder;
+}
+.contactIntro2{
+    font-size: 17px;
+}
+.formfields{
+    padding-left: 8px;
+    width: 350px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+.message{
+    padding-left: 8px;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+.button{
+    padding: 6px 40px;
+    border-radius: 10px;
+    border: none;
+}
+.subscribe{
+    margin-top: 70px;
+    margin-bottom: 150px;
+}
+.subscribe1{
+    margin-top: 10px;
+}
+.subscribe1 input{
+    padding-left: 10px;
+    width: 250px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.subscribe1 button{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 10px;
+    color: #FFFFFF;
+    background-color: #233742;
+}
+/* ***************************footer************************************** */
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #233742;
+    width: 100%;
+    height: 100px;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: 0.6s;
+    color: #FFFFFF;
+}
+.container{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact{
+    font-size: 15px;
+
+}
+.social{
+    display: flex;
+    justify-content: space-between;
+    height: 33px;
+    width: 250px;
+
+}
+.social1{
+    font-size: xx-large;
+}
+.social a{
+    text-decoration: none;
+    padding: 5px;
+    color: #FFFFFF;
+}
+.copyright{
+    font-size: 20px;
+
+}
+
