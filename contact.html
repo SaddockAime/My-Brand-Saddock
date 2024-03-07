@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="CSS/contact.css">
 </head>
 <body>
-    <div>
+    <div class="home">
         <!-- ******************************nav bar******************************** -->
         <div class="nav">
             <div class="logo">
@@ -34,18 +34,49 @@
             </div>
         </div>
         <!--****************contact***************************************** -->
-        <div class="contact">
-            <p>Contact me</p>
-        <div class="addinfo">
-            <form class="addform">
-                <label for="fullname">Name</label><input type="text" id="fullname" class="formfields"><br><br>
-                <label for="email">E-Mail</label><input type="email" id="email" class="formfields"><br><br>
-                <label for="message">Message</label><input type="text" name="message" id="message" cols="10" rows="10" class="message"><br><br>
-                <br><br>
-                <div class="button"><button type="submit" id="send">Send</button></div>
-            </form>
+        <div class="contactInfo">
+            <div class="addform">
+                <div class="contactIntro">
+                    <p class="contactIntro1">CONTACT ME</p>
+                    <p class="contactIntro2">Don't hesitate to reach out to me!</p>
+                </div>
+                <div class="add">        
+                <label for="fullname" class="label">Name</label> <br><input type="text" class="formfields" placeholder="Enter your name"><br><br>
+                <label for="email" class="label">Email</label> <br><input type="email" class="formfields" placeholder="Enter your email"><br><br>
+                <label for="message" class="label">Message</label> <br><input type="text" class="message" placeholder="Enter your message"><br><br>
+                
+                <div><button type="submit" id="send" class="button">Send</button></div>
+                </div>
+            </div>
+            <div class="subscribe">
+                <p>Get a once-per-month email with my latest article and additional details about my page.</p>
+                <div class="subscribe1">
+                    <input type="email" placeholder="Your email address"><button type="submit">Subscribe</button>
+                </div>
+            </div>
         </div>
+        <!-- **********************footer************************************* -->
+    <div class="footer">
+        <div class="container">
+            <div class="contact">
+                aimegetz@gmail.com <br>
+                +250788938717
+            </div>
+            <div class="social">
+                <div class="social1">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-github-square" ></i></a>
+                </div>
+            </div>
         </div>
+        <div class="copyright">
+                 © Saddock’s webpage 2024 <br>
+                 All rights Reserved.
+        </div>
+    </div>
     </div>
 </body>
 </html>
