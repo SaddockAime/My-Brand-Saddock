@@ -22,7 +22,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <div class="list-iteam">
+        <div class="list-iteam" id="sidemenu">
             <ul class="iteams">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -30,8 +30,10 @@
                 <li><a href="#">Blogs</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Login</a></li>
+                <li><i class="fa fa-solid fa-bars" onclick="closemenu()"></i></li>
             </ul>
         </div>
+        <i class="fa fa-solid fa-bars" onclick="openmenu()"></i>
         </div>
 
         <!-- *******************projects************************************** -->
@@ -41,7 +43,11 @@
             <div class="project-text">
                 <p class="project-text1">Smart Home Automation System</p>
                 <p class="project-text2">A Smart Home Automation System is a project that involves integrating various sensors, 
-                    actuators, and controllers to automate and remotely control home appliances and devices.</p>
+                    actuators, and controllers to automate and remotely control home appliances and devices. <br><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
             </div>
         </div>
         <div class="myProjectsContents" id="content2">
@@ -50,7 +56,11 @@
                 <p class="project-text1">IoT-based Health Monitoring System</p>
                 <p class="project-text2">An IoT-based Health Monitoring System is a project that involves creating a wearable
                     device equipped with sensors to monitor vital signs and transmit the data wirelessly
-                    to a central database for analysis and visualization.</p>
+                    to a central database for analysis and visualization. <br><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
+                </p>
             </div>
         </div>
     </div>
@@ -63,16 +73,11 @@
             </div>
             <div class="social">
                 <div class="social1">
-                    <!-- <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-x-twitter"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-brands fa-square-github"></i> -->
-                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-github-square"></i></a>
                 </div>
             </div>
         </div>
@@ -81,5 +86,18 @@
                  All rights Reserved.
         </div>
     </div>
+
+
+
+
+    <script>
+        var sideme = document.getElementById("sidemenu");
+        function openmenu(){
+            sideme.style.right = "0";
+        }
+        function closemenu(){
+            sideme.style.right = "-200px";
+        }
+    </script>
 </body>
 </html>
