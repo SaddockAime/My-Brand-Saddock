@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My personal webpage">
     <meta name="author" content="Saddock Kabandana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/signup.css">
     <title>Signup</title>
 </head>
 <body>
-    <div>
         <!-- *****************nav bar************************************* -->
+    <header>
     <div class="nav">
         <div class="logo">
-            <img src="images/SaddockAime.jpg" alt="">
+            <img src="images/SaddockAime1.jpg" alt="">
             <p>Saddock</p>
         </div>
         <div class="menu" disabled>
@@ -22,17 +28,68 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <div class="list-iteam">
+        <div class="list-iteam" id="sidemenu">
             <ul class="iteams">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Signup</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <li><i class="fa fa-solid fa-bars" onclick="closemenu()"></i></li>
             </ul>
         </div>
+        <i class="fa fa-solid fa-bars" onclick="openmenu()"></i>
     </div>
+    </header>
+    <!-- ***********************signup************************************ -->
+    <main>
+    <div class="signupInfo">
+        <div class="signInfo">
+            <div class="signform">
+                <p>Signup</p>
+            <label for="username" class="signIn">Username</label> <br><input type="text" class="signIn1" placeholder="your name"><br><br>
+            <label for="email" class="signIn">Email</label> <br><input type="email" class="signIn1" placeholder="enter your email"><br><br>
+            <label for="password" class="signIn">Password</label> <br><input type="password" class="signIn1" placeholder="*********************************"><br><br>
+            
+            <div><button type="submit" class="signBut">Signup</button></div>
+            </div>
+        </div>
     </div>
+    </main>
+    <!-- **********************footer************************************* -->
+    <footer>
+    <div class="footer">
+        <div class="container">
+            <div class="contact">
+                <p><i class="fa fa-solid fa-at"></i>aimegetz@gmail.com</p>
+                <p><i class="fa fa-solid fa-phone-square"></i>+250788938717</p>
+            </div>
+            <div class="social">
+                <div class="social1">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-github-square" ></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+                 <P><b>© Saddock’s webpage 2024</b></P>
+                 <p class="allright">All rights Reserved.</p>
+        </div>
+    </div>
+    </footer>
+
+    <script>
+        var sideme = document.getElementById("sidemenu");
+        function openmenu(){
+            sideme.style.right = "0";
+        }
+        function closemenu(){
+            sideme.style.right = "-200px";
+        }
+    </script>
 </body>
 </html>
