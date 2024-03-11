@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My personal webpage">
     <meta name="author" content="Saddock Kabandana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/about.css">
     <title>About</title>
 </head>
 <body>
-    <div class="home">
         <!-- ******************************nav bar******************************** -->
+        <header>
         <div class="nav">
             <div class="logo">
-                <img src="images/SaddockAime.jpg" alt="">
+                <img src="images/SaddockAime1.jpg" alt="">
                 <p>Saddock</p>
             </div>
             <div class="menu" disabled>
@@ -24,27 +30,28 @@
             </div>
             <div class="list-iteam" id="sidemenu">
                 <ul class="iteams">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li><i class="fa fa-solid fa-bars" onclick="closemenu()"></i></li>
                 </ul>
             </div>
             <i class="fa fa-solid fa-bars" onclick="openmenu()"></i>
         </div>
+        </header>
         <!-- ----------about---------- -->
-        <div id="about">
-        <div class="container">
+        <div class="about">
+            <main>
             <div class="row">
                 <div class="about-col-1">
                     <img src="images/saddock123.jpg" alt="">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>I'm Saddock Kabandana, a university student with a keen interest in 
+                    <p class="sub-title1">I'm Saddock Kabandana, a university student with a keen interest in 
                         engineering and web development. I aim to share my experiences, challenges, 
                         and achievements as I progress through my studies and beyond.</p>
                     <div class="tab-titles">
@@ -76,38 +83,41 @@
                     </div>
                     <div class="tab-contents" id="hobbies">
                         <ul>
-                            <li><span>Working</span><br>UI/UX Design Training at ET Institute</li>
-                            <li><span>Free Time</span><br>MBA from MIT Bangalore.</li>
-                            <li><span>Travelling</span><br>BBA from ISM Bangalore</li>
+                            <li><span>Sports</span><br>Watching football games</li>
+                            <li><span>Free Time</span><br>Reading books and watching movies.</li>
+                            <li><span>Travelling</span><br>Moving around the world looking for new experiences.</li>
                         </ul>
                     </div>
                 </div>
             </div>
+            </main>
         </div>
-        </div>
-        <!-- ******************************footer*********************************** -->
-        <div class="footer">
-            <div class="container">
-                <div class="contact">
-                    aimegetz@gmail.com <br>
-                    +250788938717
-                </div>
-                <div class="social">
-                    <div class="social1">
-                        <a href="#"><i class="fa fa-facebook-square"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-twitter-square"></i></a>
-                        <a href="#"><i class="fa fa-linkedin-square"></i></a>
-                        <a href="#"><i class="fa fa-github-square"></i></a>
-                    </div>
+        <!-- **********************footer************************************* -->
+    <footer>
+    <div class="footer">
+        <div class="container">
+            <div class="contact">
+                <p><i class="fa fa-solid fa-at"></i>aimegetz@gmail.com</p>
+                <p><i class="fa fa-solid fa-phone-square"></i>+250788938717</p>
+            </div>
+            <div class="social">
+                <div class="social1">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-github-square" ></i></a>
                 </div>
             </div>
-            <div class="copyright">
-                     © Saddock’s webpage 2024 <br>
-                     All rights Reserved.
-            </div>
+        </div>
+        <div class="copyright">
+                 <P>©2024 Saddock’s webpage</P>
+                 <p class="allright">All rights Reserved.</p>
         </div>
     </div>
+    </footer>
+
+
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
