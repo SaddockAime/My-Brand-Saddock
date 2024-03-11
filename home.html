@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="My personal webpage">
     <meta name="author" content="Saddock Kabandana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>HOME</title>
     <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
-    <div class="home">
     <!-- *****************nav bar************************************* -->
+    <header>
     <div class="nav">
         <div class="logo">
-            <img src="images/SaddockAime.jpg" alt="">
+            <img src="images/SaddockAime1.jpg" alt="">
             <p>Saddock</p>
         </div>
         <div class="menu" disabled>
@@ -24,31 +30,36 @@
         </div>
         <div class="list-iteam" id="sidemenu">
             <ul class="iteams">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
                 <li><i class="fa fa-solid fa-bars" onclick="closemenu()"></i></li>
             </ul>
         </div>
         <i class="fa fa-solid fa-bars" onclick="openmenu()"></i>
     </div>
+    </header>
     <!-- ********************intro*************************************** -->
     <div class="intro">
-        <img src="images/SaddockAime.jpg" alt="">
-        <p class="name">Hey, I am <b>Saddock Kabandana</b></p></p><br>
-        <p class="text">I like working on the front-end of the web. This is my site, where I blog
+        <main>
+        <img src="images/SaddockAime1.jpg" alt="">
+        <p class="name">Hi, I'm<b class="name1">Saddock</b></p></p><br>
+        <p class="text">I like working on the front-end of the web. This is my site, where I blog <br>
             and share whatever side projects I've been working on.</p>
-        <button type="submit">My Projects</button>
+        <p class="findout">Find out more on my<a href="projects.html"> projects>></a></p>
+        <!-- <button type="submit">My Projects</button> -->
+        </main>
     </div>
     <!-- **********************footer************************************* -->
+    <footer>
     <div class="footer">
         <div class="container">
             <div class="contact">
-                aimegetz@gmail.com <br>
-                +250788938717
+                <p><i class="fa fa-solid fa-at"></i>aimegetz@gmail.com</p>
+                <p><i class="fa fa-solid fa-phone-square"></i>+250788938717</p>
             </div>
             <div class="social">
                 <div class="social1">
@@ -61,11 +72,13 @@
             </div>
         </div>
         <div class="copyright">
-                 © Saddock’s webpage 2024 <br>
-                 All rights Reserved.
+                 <P>©2024 Saddock’s webpage</P>
+                 <p class="allright">All rights Reserved.</p>
         </div>
     </div>
-    </div>
+    </footer>
+
+    
     <script>
         var sideme = document.getElementById("sidemenu");
         function openmenu(){
