@@ -1,19 +1,19 @@
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     margin: 0;
     padding: 0;
 }
-body{
+html, body{
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    background-color: #161616;
 }
 /* **************navigation bar*************************************  */
 .nav{
-    background-color: #233742;
-    position: fixed;
-    top: 0;
-    left: 0;
+    background-color: #000000;
     width:100%;
     height: 85px;
     display: flex;
@@ -21,6 +21,7 @@ body{
     align-items: center;
     transition: 0.6s;
     color: #FFFFFF;
+    cursor: pointer;
     
 }
 .logo{
@@ -54,13 +55,19 @@ body{
     position: relative;
     list-style: none;
 }
+.iteams li a:hover{
+    color: #E4A707;
+}
+.iteams li:nth-child(4) a{
+    color: #E4A707;
+}
 .iteams li:nth-child(4)::after{
     content: '';
     display: block;
     margin-left: 15px;
     width: 70%;
     height: 3px;
-    background-color: #FFFFFF;
+    background-color: #E4A707;
     position: absolute;
     bottom: -5px;
     transition: width 0.3s ease;
@@ -80,7 +87,7 @@ body{
     margin-left: 15px;
     width: 0;
     height: 3px;
-    background-color: #FFFFFF;
+    background-color: #E4A707;
     position: absolute;
     bottom: -5px;
     transition: width 0.3s ease;
@@ -89,27 +96,34 @@ body{
     width: 100%;
 }
 /* ***********************end of nav bar********************************** */
-
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+    color: #FFFFFF;
+}
 .blog{
-    color: #233742;
     text-align: center;
 }
 .bloghead{
+    color: #E4A707;
     font-size: 50px;
-    margin-top: 105px;
+    margin-top: 50px;
     font-weight: bolder;
 }
 .blogContainer{
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 .blog1{
     display: block;
     justify-content: center;
     text-align: left;
-    margin-left: 30px;
+    margin-left: 25px;
 }
 .blog1 .blogimage{
     width: 100%;
@@ -123,6 +137,7 @@ body{
 .blogcont{
     font-size: 20px;
     margin-top: 10px;
+    font-family: "Inria Sans", sans-serif;
 }
 .blogdate{
     font-size: 15px;
@@ -130,45 +145,53 @@ body{
 }
 .blog button{
     margin-top: 30px;
-    font-size: 25px;
+    font-size: 15px;
     padding: 15px 30px;
-    color: #FFFFFF;
-    background-color: #233742;
+    color: #000000;
+    background-color: #E4A707;
     border: none;
     border-radius: 15px;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
 }
 
 /* ***************************footer************************************** */
 .footer{
-    position: fixed;
-    bottom: 0;
-    background-color: #233742;
+    background-color: #000000;
     width: 100%;
     height: 100px;
-    display: block;
+    /* display: block; */
     justify-content: space-between;
     align-items: center;
     text-align: center;
     transition: 0.6s;
     color: #FFFFFF;
+    cursor: pointer;
 }
 .container{
-    padding: 5px;
+    /* padding: 5px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 .contact{
+    margin-left: 10px;
+    margin-top: 5px;
     font-size: 15px;
-
+    text-align: left;
+    padding: 5px;
+}
+.contact p{
+    margin-bottom: 5px;
+}
+.contact p i{
+    margin-right: 3px;
 }
 .social{
     display: flex;
     justify-content: space-between;
     height: 33px;
     width: 250px;
+    margin-right: 20px;
 
 }
 .social1{
@@ -178,8 +201,118 @@ body{
     text-decoration: none;
     padding: 5px;
     color: #FFFFFF;
+    margin-right: 5px;
 }
 .copyright{
     font-size: 20px;
+}
+.allright{
+    font-size: 15px;
+}
+
+.nav .fa{
+    display: none;
+}
+@media only screen and (max-width:890px){ 
+    .list-iteam{
+        position: fixed;
+        right: -200px;
+    }
+    .iteams{
+        position: relative;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+        top: 199px;
+        background-color: #000000;
+    }
+    .iteams li{
+        position: relative;
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    .iteams li:nth-child(4)::after{
+        content: '';
+        display: block;
+        margin-left: 15px;
+        width: 60%;
+        height: 3px;
+        position: absolute;
+        bottom: -5px;
+        transition: width 0.3s ease;
+    }
+    .iteams li a{
+        position: relative;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: 0.6s;
+        font-weight: bold;
+        font-size: 25px;
+        color: #FFFFFF;
+    }
+    .iteams li a:hover::after{
+        width: 100%;
+    } 
+    .nav .fa{
+        display: block;
+        font-size: 40px;
+        margin-right: 30px;
+    }
+    .iteams li:nth-child(7){
+        position: absolute;
+        top: -63px;
+        font-size: 40px;
+        right: 0;
+    }
+    .blogContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 30px;
+        margin-right: 100px;
+        margin-left: 100px;
+        text-align: center;
+    }
+    .blog1 .blogimage{
+        width: 100%;
+    }
+    .blogdate{
+        margin-bottom: 50px;
+    }
+}
+@media only screen and (max-width:500px){
+    .social{
+        width: 150px;
+        margin-right: 0;
+    
+    }
+    .social1{
+        font-size: large;
+    }
+    .social1 a{
+        margin-right: 0;
+    }
+    .copyright{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .contact{
+        font-size: 12px;
+    }
+    .allright{
+        font-size: 13px;
+    }
+    .bloghead{
+        font-size: 50px;
+    }
+    .blogContainer{
+        margin-right: 50px;
+        margin-left: 30px;
+    }
+    .blog button{
+        font-size: 20px;
+        padding: 10px 20px;
+    }
 
 }

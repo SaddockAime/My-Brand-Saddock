@@ -1,19 +1,19 @@
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     margin: 0;
     padding: 0;
 }
-body{
+html, body{
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    background-color: #161616;
 }
 /* **************navigation bar*************************************  */
 .nav{
-    background-color: #233742;
-    position: fixed;
-    top: 0;
-    left: 0;
+    background-color: #000000;
     width:100%;
     height: 85px;
     display: flex;
@@ -21,6 +21,7 @@ body{
     align-items: center;
     transition: 0.6s;
     color: #FFFFFF;
+    cursor: pointer;
     
 }
 .logo{
@@ -54,13 +55,19 @@ body{
     position: relative;
     list-style: none;
 }
+.iteams li a:hover{
+    color: #E4A707;
+}
+.iteams li:nth-child(6) a{
+    color: #E4A707;
+}
 .iteams li:nth-child(6)::after{
     content: '';
     display: block;
     margin-left: 15px;
     width: 70%;
     height: 3px;
-    background-color: #FFFFFF;
+    background-color: #E4A707;
     position: absolute;
     bottom: -5px;
     transition: width 0.3s ease;
@@ -80,7 +87,7 @@ body{
     margin-left: 15px;
     width: 0;
     height: 3px;
-    background-color: #FFFFFF;
+    background-color: #E4A707;
     position: absolute;
     bottom: -5px;
     transition: width 0.3s ease;
@@ -89,3 +96,215 @@ body{
     width: 100%;
 }
 /* ***********************end of nav bar********************************** */
+
+/* ****************************signup************************************** */
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.signupInfo{
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* position: absolute; */
+    width: 100%;
+    text-align: center;       
+}
+.signInfo{
+    margin: auto;
+    text-align: left;
+}
+.signform{
+    background-color: #000000;
+    color: #FFFFFF;
+    width: 420px;
+    height: 340px;
+    border-radius: 30px;
+    padding-top: 20px;
+}
+.signform p{
+    color: #E4A707;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.signIn{
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.signIn1{
+    width: 300px;
+    height: 35px;
+    text-align: left;
+    border-radius: 10px;
+    border: none;
+    margin-left: 40px;
+    padding-left: 10px;
+    background-color: #EEEEEE;
+}
+.signBut{
+    padding: 6px 25px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    background-color:  #E4A707;
+}
+
+/* ***************************footer************************************** */
+.footer{
+    background-color: #000000;
+    width: 100%;
+    height: 100px;
+    /* display: block; */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: 0.6s;
+    color: #FFFFFF;
+}
+.container{
+    /* padding: 5px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 15px;
+    text-align: left;
+    padding: 5px;
+}
+.contact p{
+    margin-bottom: 5px;
+}
+.contact p i{
+    margin-right: 3px;
+}
+.social{
+    display: flex;
+    justify-content: space-between;
+    height: 33px;
+    width: 250px;
+    margin-right: 20px;
+
+}
+.social1{
+    font-size: xx-large;
+}
+.social a{
+    text-decoration: none;
+    padding: 5px;
+    color: #FFFFFF;
+    margin-right: 5px;
+}
+.copyright{
+    font-size: 20px;
+}
+.allright{
+    font-size: 15px;
+}
+
+.nav .fa{
+    display: none;
+}
+@media only screen and (max-width:890px){ 
+    .list-iteam{
+        position: fixed;
+        right: -200px;
+    }
+    .iteams{
+        position: relative;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+        top: 199px;
+        background-color: #000000;
+    }
+    .iteams li{
+        position: relative;
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    .iteams li:nth-child(6)::after{
+        content: '';
+        display: block;
+        margin-left: 15px;
+        width: 60%;
+        height: 3px;
+        position: absolute;
+        bottom: -5px;
+        transition: width 0.3s ease;
+    }
+    .iteams li a{
+        position: relative;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: 0.6s;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .iteams li a:hover::after{
+        width: 100%;
+    } 
+    .nav .fa{
+        display: block;
+        font-size: 40px;
+        margin-right: 30px;
+    }
+    .iteams li:nth-child(7){
+        position: absolute;
+        top: -63px;
+        font-size: 40px;
+        right: 0;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .social{
+        width: 150px;
+        margin-right: 0;
+    
+    }
+    .social1{
+        font-size: large;
+    }
+    .social1 a{
+        margin-right: 0;
+    }
+    .copyright{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .contact{
+        font-size: 12px;
+    }
+    .allright{
+        font-size: 13px;
+    }
+    .signupInfo{
+        margin-top: 90px;
+    }
+    .signform{
+        width: 350px;
+    }
+    .signIn1{
+        width: 250px;
+    }
+    .signBut{
+        margin-left: 120px;
+    }
+}
+
