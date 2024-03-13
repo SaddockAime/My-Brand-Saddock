@@ -66,7 +66,7 @@ html, body{
     display: block;
     margin-left: 15px;
     width: 70%;
-    height: 3px;
+    height: 4px;
     background-color: #E4A707;
     position: absolute;
     bottom: -5px;
@@ -124,7 +124,7 @@ main{
     background-color: #000000;
     color: #FFFFFF;
     width: 420px;
-    height: 280px;
+    height: 310px;
     border-radius: 30px;
     padding-top: 20px;
 }
@@ -135,22 +135,57 @@ main{
     font-weight: bold;
     margin-bottom: 30px;
 }
-.addIn{
-    margin-top: 20px;
+.loginfield{
+    position: relative;
     margin-left: 40px;
-    font-size: 20px;
-    font-weight: bold;
-}
-.addIn1{
-    width: 300px;
-    height: 35px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    justify-content: center;
     text-align: left;
-    border-radius: 10px;
-    border: none;
-    margin-left: 40px;
-    padding-left: 10px;
-    background-color: #EEEEEE;
 }
+.loginfield label{
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: 20px;
+}
+.loginfield input{
+    border: 2px solid #D9D9D9;
+    border-radius: 5px;
+    display: block;
+    width: 80%;
+    font-size: 15px;
+    padding: 5px 0 5px 5px;
+}
+.loginfield i{
+    position: absolute;
+    top: 33px;
+    right: 75px;
+    color: #E4A707;
+    visibility: hidden;
+}
+.loginfield small{
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+.loginfield.success input{
+    border-color: #E4A707;
+}
+.loginfield.error input{
+    border-color: red;
+}
+.loginfield.success i.fa-check-circle{
+    visibility: visible;
+}
+.loginfield.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: red;
+}
+.loginfield.error small{
+    visibility: visible;
+    color: red;
+}
+
 .loginBut{
     padding: 6px 25px;
     border-radius: 10px;
@@ -315,5 +350,20 @@ main{
     }
     .loginBut{
         margin-left: 120px;
+    }
+    .loginfield i{
+        right: 60px;
+    }
+}
+
+@media only screen and (max-width:365px){
+    .addform{
+        width: 300px;
+    }
+    .loginBut{
+        margin-left: 100px;
+    }
+    .loginfield i{
+        right: 50px;
     }
 }

@@ -63,7 +63,7 @@ html, body{
     display: block;
     margin-left: 15px;
     width: 70%;
-    height: 3px;
+    height: 4px;
     background-color: #E4A707;
     position: absolute;
     bottom: -5px;
@@ -139,19 +139,6 @@ main{
     color: #E4A707;
     font-weight: normal;
 }
-
-
-/* .intro button{
-    width: 275px;
-    height: 75px;
-    margin-top: 40px;
-    font-size: 30px;
-    color: #FFFFFF;
-    background-color: #233742;
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 120px;
-} */
 /* ***************************footer************************************** */
 .footer{
     /* position: absolute; */
@@ -279,17 +266,6 @@ main{
     .text{
         font-size: 20px;
     }
-    .intro button{
-        width: 190px;
-        height: 50px;
-        margin-top: 40px;
-        font-size: 20px;
-        color: #FFFFFF;
-        background-color: #233742;
-        border: none;
-        border-radius: 20px;
-        margin-bottom: 120px;
-    }     
 }
 @media only screen and (max-width:500px){
     .social{

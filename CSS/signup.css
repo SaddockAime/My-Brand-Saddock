@@ -65,8 +65,8 @@ html, body{
     content: '';
     display: block;
     margin-left: 15px;
-    width: 70%;
-    height: 3px;
+    width: 75%;
+    height: 4px;
     background-color: #E4A707;
     position: absolute;
     bottom: -5px;

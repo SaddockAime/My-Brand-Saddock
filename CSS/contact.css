@@ -75,7 +75,7 @@ html, body{
     display: block;
     margin-left: 15px;
     width: 80%;
-    height: 3px;
+    height: 4px;
     background-color: #E4A707;
     position: absolute;
     bottom: -5px;
@@ -126,10 +126,12 @@ main{
     background-color: #000000;
     color: #FFFFFF;
     width: 500px;
-    height: 280px;
+    height: 320px;
     border-radius: 20px;
     padding-top: 20px;
-
+    padding-left: 30px;
+    text-align: center;
+    justify-content: center;
 }
 .label{
     margin-top: 20px;
@@ -143,22 +145,62 @@ main{
     font-size: 17px;
     font-family: "Inria Sans", sans-serif;
 }
-.formfields{
-    padding-left: 8px;
-    width: 350px;
-    height: 35px;
-    text-align: center;
-    border-radius: 10px;
-    border: none;
+.formfield{
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    justify-content: center;
+    margin-left: 40px;
 }
-.message{
-    padding-left: 8px;
-    width: 350px;
-    height: 50px;
-    text-align: center;
-    border-radius: 10px;
-    border: none;
+.formfield label{
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: 20px;
+    margin-left: -60px;
 }
+.formfield input{
+    border: 2px solid #D9D9D9;
+    border-radius: 5px;
+    display: block;
+    width: 80%;
+    font-size: 15px;
+    padding: 5px 0 5px 5px;
+    text-align: center;
+}
+.formfield.success input{
+    border-color: #E4A707;
+}
+.formfield.error input{
+    border-color: red;
+}
+.formfield.success i.fa-check-circle{
+    visibility: visible;
+}
+.formfield.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: red;
+}
+.formfield.error small{
+    visibility: visible;
+    color: red;
+}
+.formfield i{
+    position: absolute;
+    top: 33px;
+    right: 90px;
+    color: #E4A707;
+    visibility: hidden;
+}
+.formfield small{
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+
 .button{
     padding: 6px 40px;
     border-radius: 10px;
@@ -170,18 +212,26 @@ main{
     margin-top: 70px;
     margin-bottom: 50px;
 }
-.subscribe1{
+.subscribeform{
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
 }
-.subscribe1 input{
+.subscribeform input{
     padding-left: 10px;
-    width: 250px;
+    width: 260px;
     height: 35px;
     border-radius: 10px;
-    border: none;
     background-color: #D9D9D9;
 }
-.subscribe1 button{
+.subscribeinput.error input{
+    border-color: red;
+}
+.subscribeinput.success input{
+    border-color: #E4A707;
+}
+
+.subscribeform button{
     padding: 10px 15px;
     border-radius: 10px;
     border: none;
@@ -328,14 +378,46 @@ main{
     .add{
         width: 350px;
     }
-    .formfields{
-        width: 250px;
-    }
-    .message{
-        width: 250px;
-    }
     .contactInfo{
         margin-top: 60px;
     }
+    .formfield i{
+        right: 60px;
+    }
 }
+
+@media only screen and (max-width:380px){
+    .add{
+        width: 280px;
+        margin-right: 0;
+    }
+    .formfield {
+        margin-left: 8px;
+    }
+    .contactIntro1{
+        font-size: 40px;
+    }
+    .contactIntro2{
+        font-size: 15px;
+    }
+    .subscribe p{
+        font-size: 15px;
+    }
+    .subscribeform input{
+        width: 170px;
+    }
+    .subscribeform button{
+        font-size: 15px;
+        padding: 10px 5px;
+    }
+    .formfield i{
+        right: 50px;
+    }
+}
+@media only screen and (max-width:310px){
+    .add{
+        width: 220px;
+    }
+}
+
 
