@@ -23,11 +23,6 @@
                 <img src="images/SaddockAime1.jpg" alt="">
                 <p>Saddock</p>
             </div>
-            <div class="menu" disabled>
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
             <div class="list-iteam" id="sidemenu">
                 <ul class="iteams">
                     <li><a href="index.html">Home</a></li>
@@ -50,19 +45,38 @@
                     <p class="contactIntro1">CONTACT ME</p>
                     <p class="contactIntro2">Don't hesitate to reach out to me!</p>
                 </div>
-                <div class="add">        
-                <label for="fullname" class="label">Name</label> <br><input type="text" class="formfields" placeholder="Enter your name"><br><br>
-                <label for="email" class="label">Email</label> <br><input type="email" class="formfields" placeholder="Enter your email"><br><br>
-                <label for="message" class="label">Message</label> <br><input type="text" class="message" placeholder="Enter your message"><br><br>
-                
-                <div><button type="submit" id="send" class="button">Send</button></div>
+                <form class="add" id="form">
+                <div class="formfield">        
+                <label>Name</label>
+                <input type="text" id="username" placeholder="Enter your name">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error</small>
                 </div>
+                <div class="formfield">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error</small>
+                </div>
+                <div class="formfield">
+                <label>Message</label>
+                <input type="text" id="text" placeholder="Enter your message">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error</small>
+                </div>
+                <div><button type="submit" id="send" class="button">Submit</button></div>
+                </form>
             </div>
             <div class="subscribe">
                 <p>Get a once-per-month email with my latest article and additional details about my page.</p>
-                <div class="subscribe1">
-                    <input type="email" placeholder="Your email address"><button type="submit">Subscribe</button>
-                </div>
+                <form class="subscribeform" id="subscribecontent">
+                    <div class="subscribeinput"><input type="email" id="subscribe" placeholder="Your email address">
+                    </div>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
         </main>
@@ -91,14 +105,7 @@
     </div>
     </footer>
 
-    <script>
-        var sideme = document.getElementById("sidemenu");
-        function openmenu(){
-            sideme.style.right = "0";
-        }
-        function closemenu(){
-            sideme.style.right = "-200px";
-        }
-    </script>
+    <script src="javascript/contact.js"></script>
+
 </body>
 </html>
