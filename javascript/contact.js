@@ -64,27 +64,33 @@ function checkInputs(){
         setErrorFor(text, "write a comple message");
     }else{
         setSuccessFor(text);
+
+    // localStorage.setItem("Name", usernameValue);
+    // localStorage.setItem("email", emailValue);
+    // localStorage.setItem("Message", textValue);
+
+    //form.reset();
     }
 
 }
 
 function setErrorFor(input, message){
-    const formControl = input.parentElement;
-    const small = formControl.querySelector("small");
+    const contactControl = input.parentElement;
+    const small = contactControl.querySelector("small");
 
     small.innerText = message;
 
-    formControl.className = "formfield error";
+    contactControl.className = "formfield error";
 
 }
 
 function setTextError(text){
-    return /^[A-Za-z]+$/.test(text);
+    return /^[a-zA-Z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]+$/.test(text);
 }
 
 function setSuccessFor(input){
-    const formControl = input.parentElement;
-    formControl.className = "formfield success";
+    const contactControl = input.parentElement;
+    contactControl.className = "formfield success";
 }
 
 function realEmail(email){

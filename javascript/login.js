@@ -59,8 +59,8 @@ function realEmail(email){
 }
 
 function setSuccessFor(input){
-    const formControl = input.parentElement;
-    formControl.className = "loginfield success";
+    const loginControl = input.parentElement;
+    loginControl.className = "loginfield success";
 }
 
 function realPassword(password){
