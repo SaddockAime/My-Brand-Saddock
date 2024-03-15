@@ -1,5 +1,4 @@
 *{
-    /* font-family: Arial, Helvetica, sans-serif; */
     margin: 0;
     padding: 0;
 }
@@ -21,7 +20,6 @@ html, body{
     align-items: center;
     transition: 0.6s;
     color: #FFFFFF;
-    cursor: pointer;
     
 }
 .logo{
@@ -103,7 +101,6 @@ main{
     display: flex;
     flex-direction: column;
     text-align: center;
-    cursor: pointer;
 }
 .myProjects{
     font-size: 50px;
@@ -134,11 +131,19 @@ main{
 .project-text1{
     margin-top: 10px;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 800;
+    /* font-family: "Inria Sans", sans-serif;
+    -webkit-text-stroke-color: #E4A707;
+    -webkit-text-stroke-width: 0.02em;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    -webkit-transition: background-size 0.5s cubic-bezier(0.67, 0.01, 0.15, 0.98);
+    transition: background-size 0.5s cubic-bezier(0.67, 0.01, 0.15, 0.98); */
 }
 .project-text2{
     margin-top: 20px;
-    font-size: 15px;
+    font-size: 17px;
     font-family: "Inria Sans", sans-serif;
 }
 .project-text3{
@@ -146,7 +151,7 @@ main{
     font-size: 15px;
     color: #E4A707;
 }
-#content2{
+.myProjectsContents.last{
     margin-bottom: 130px;
 }
 /* ***************************footer************************************** */
@@ -160,10 +165,9 @@ main{
     text-align: center;
     transition: 0.6s;
     color: #FFFFFF;
-    cursor: pointer;
+
 }
 .container{
-    /* padding: 5px; */
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,5 +1,4 @@
 *{
-    /* font-family: Arial, Helvetica, sans-serif; */
     margin: 0;
     padding: 0;
 }
@@ -21,7 +20,6 @@ html, body{
     align-items: center;
     transition: 0.6s;
     color: #FFFFFF;
-    cursor: pointer;
     
 }
 .logo{
@@ -101,9 +99,7 @@ main{
     display: flex;
     flex-direction: column;
     text-align: center;
-    cursor: pointer;
     color: #FFFFFF;
-    cursor: pointer;
 }
 .contactInfo{
     justify-content: center;
@@ -111,7 +107,6 @@ main{
     display: flex;
     flex-direction: column;
     align-content: center;
-    /* position: absolute; */
     width: 100%;
     text-align: center;
 }
@@ -126,7 +121,7 @@ main{
     background-color: #000000;
     color: #FFFFFF;
     width: 500px;
-    height: 320px;
+    height: 340px;
     border-radius: 20px;
     padding-top: 20px;
     padding-left: 30px;
@@ -150,7 +145,7 @@ main{
     margin-bottom: 10px;
     padding-bottom: 20px;
     justify-content: center;
-    margin-left: 40px;
+    margin-left: 50px;
 }
 .formfield label{
     display: inline-block;
@@ -167,22 +162,34 @@ main{
     padding: 5px 0 5px 5px;
     text-align: center;
 }
-.formfield.success input{
+.formfield textarea{
+    border: 2px solid #D9D9D9;
+    border-radius: 5px;
+    display: block;
+    width: 80%;
+    font-size: 15px;
+    padding: 5px 0 5px 5px;
+    text-align: center;
+}
+.formfield.success input,textarea{
     border-color: #E4A707;
 }
 .formfield.error input{
-    border-color: red;
+    border-color: rgb(210, 4, 4);
+}
+.formfield.error textarea{
+    border-color: rgb(210, 4, 4);
 }
 .formfield.success i.fa-check-circle{
     visibility: visible;
 }
 .formfield.error i.fa-exclamation-circle{
     visibility: visible;
-    color: red;
+    color: rgb(210, 4, 4);
 }
 .formfield.error small{
     visibility: visible;
-    color: red;
+    color: rgb(210, 4, 4);
 }
 .formfield i{
     position: absolute;
@@ -202,8 +209,9 @@ main{
 
 
 .button{
-    padding: 6px 40px;
+    padding: 6px 25px;
     border-radius: 10px;
+    font-size: 20px;
     border: none;
     color: #000000;
     background-color: #E4A707;
@@ -222,7 +230,7 @@ main{
     width: 260px;
     height: 35px;
     border-radius: 10px;
-    background-color: #D9D9D9;
+    border: 2px solid #D9D9D9;
 }
 .subscribeinput.error input{
     border-color: red;
@@ -244,16 +252,13 @@ main{
     background-color: #000000;
     width: 100%;
     height: 100px;
-    /* display: block; */
     justify-content: space-between;
     align-items: center;
     text-align: center;
     transition: 0.6s;
     color: #FFFFFF;
-    cursor: pointer;
 }
 .container{
-    /* padding: 5px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -381,8 +386,23 @@ main{
     .contactInfo{
         margin-top: 60px;
     }
+    .formfield{
+        margin-left: 10px;
+    }
+    .formfield label{
+        padding-left: 40px;
+    }
+    .formfield input, .formfield textarea{
+        width: 85%;
+    }
     .formfield i{
-        right: 60px;
+        right: 50px;
+    }
+    .button{
+        padding: 6px 15px;
+        border-radius: 10px;
+        font-size: 20px;
+        margin-left: -10px;
     }
 }
 
