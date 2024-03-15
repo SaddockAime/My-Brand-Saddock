@@ -41,14 +41,32 @@
     <main>
     <div class="signupInfo">
         <div class="signInfo">
-            <div class="signform">
+            <form class="signform" id="signUp">
                 <p>Signup</p>
-            <label for="username" class="signIn">Username</label> <br><input type="text" class="signIn1" placeholder="your name"><br><br>
-            <label for="email" class="signIn">Email</label> <br><input type="email" class="signIn1" placeholder="enter your email"><br><br>
-            <label for="password" class="signIn">Password</label> <br><input type="password" class="signIn1" placeholder="*********************************"><br><br>
+            <div class="signupfield">
+            <label>Username</label> 
+            <input type="text" id="username" placeholder="your name">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error</small>
+            </div>
+            <div class="signupfield">
+            <label>Email</label> 
+            <input type="email" id="email" placeholder="enter your email">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error</small>
+            </div>
+            <div class="signupfield">
+            <label>Password</label> 
+            <input type="text" id="password" placeholder="********************">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error</small>
+            </div>
             
             <div><button type="submit" class="signBut">Signup</button></div>
-            </div>
+            </form>
         </div>
     </div>
     </main>
