@@ -79,7 +79,8 @@ function checkInputs(){
             localStorage.setItem("Messages", messageJSON);
     
         form.reset();
-        console.log(messageJSON);
+        console.log(message);
+        //alert("message sent successfully");
 
     }
     
@@ -128,7 +129,7 @@ function checkSubscription(){
     }
 
     if(subscribeValue !="" & realEmail(subscribeValue)){
-        
+
         var existingSubscription = localStorage.getItem("Subscription");
 
         var subscription = existingSubscription ? JSON.parse(existingSubscription) : [];
@@ -142,7 +143,7 @@ function checkSubscription(){
         localStorage.setItem("Subscription", subscriptionJSON);
 
         subscribecontent.reset();
-        console.log(subscriptionJSON);
+        console.log(subscription);
     }  
 }
 

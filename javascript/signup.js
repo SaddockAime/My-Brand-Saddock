@@ -75,7 +75,7 @@ var sideme = document.getElementById("sidemenu");
             localStorage.setItem("userDetails", userInfoJSON);
 
             signUp.reset();
-            console.log(userInfoJSON);
+            console.log(userInfo);
         }
         
             

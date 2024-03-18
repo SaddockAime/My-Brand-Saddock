@@ -33,12 +33,12 @@ loginform.addEventListener("submit", (e) => {
     const existingUser = users.find(user => user.email == email.value.trim())
 
     if(! existingUser){
-        alert('user does not exist');
+        alert('email or password is incorrect');
         return;
     }
 
     if(existingUser.password != password.value.trim()){
-        alert(' incorrect password')
+        alert('email or password is incorrect')
         return;
     }
 
