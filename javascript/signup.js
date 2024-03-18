@@ -7,11 +7,17 @@ var sideme = document.getElementById("sidemenu");
         }
 
 
+
+
+
+
+
         const signUp = document.getElementById("signUp");
         const username = document.getElementById("username");
         const email = document.getElementById("email");
         const password = document.getElementById("password");
         
+        //validating signup form and storing info on local storage
         signUp.addEventListener("submit", (e) => {
             e.preventDefault();
         
@@ -24,31 +30,53 @@ var sideme = document.getElementById("sidemenu");
             const passwordValue = password.value.trim();
 
             if(usernameValue === ""){
-                setErrorFor(username, "your name is blank");
+                setErrorFor(username, "your name is required");
         
             }else if(!setTextError(usernameValue)){
-                setErrorFor(username, "not a real name")
+                setErrorFor(username, "insert a good username")
             }else if(usernameValue.length < 3){
-                setErrorFor(username, "insert full name");
+                setErrorFor(username, "insert complete username");
             }else{
                 setSuccessFor(username);
             }
         
             if(emailValue === ""){
-                setErrorFor(email, "email is blank");
+                setErrorFor(email, "email is required");
             }else if(!realEmail(emailValue)){
-                setErrorFor(email, "email is not valid");
+                setErrorFor(email, "email is not real");
             }else{
                 setSuccessFor(email);
             }
         
             if(passwordValue === ""){
-                setErrorFor(password, "password is blank");
+                setErrorFor(password, "password is required");
             }else if(!realPassword(passwordValue)){
-                setErrorFor(password, "password is not strong");
+                setErrorFor(password, "has 8-characters and digit-upper-lowercase-specialCharacter");
             }else{
                 setSuccessFor(password);
             }
+
+            if(usernameValue != "" & setTextError(usernameValue) &
+                usernameValue.length > 2 & emailValue != "" & realEmail(emailValue) & 
+                passwordValue != "" & realPassword(passwordValue)){
+
+            var existingUser = localStorage.getItem("userDetails");
+
+            var userInfo = existingUser ? JSON.parse(existingUser) : [];
+
+            userInfo.push({
+               userName: usernameValue,
+               email: emailValue,
+               password: passwordValue 
+            });
+
+            var userInfoJSON = JSON.stringify(userInfo);
+
+            localStorage.setItem("userDetails", userInfoJSON);
+
+            signUp.reset();
+            console.log(userInfoJSON);
+        }
         
             
         }
@@ -64,11 +92,11 @@ var sideme = document.getElementById("sidemenu");
         }
 
         function setTextError(text){
-            return /^[A-Za-z]+$/.test(text);
+            return /^[A-Za-z]+[A-Za-z0-9.@_-]+$/.test(text);
         }
         
         function realEmail(email){
-            return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+            return /^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$/.test(email);
         }
         
         function setSuccessFor(input){

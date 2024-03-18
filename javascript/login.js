@@ -1,3 +1,6 @@
+
+
+//********************side bar******************************
 var sideme = document.getElementById("sidemenu");
         function openmenu(){
             sideme.style.right = "0";
@@ -6,10 +9,7 @@ var sideme = document.getElementById("sidemenu");
             sideme.style.right = "-200px";
         }
 
-
-
-
-
+//******************login validation**************************
 
 const loginform = document.getElementById("loginform");
 const email = document.getElementById("email");
@@ -17,8 +17,34 @@ const password = document.getElementById("password");
 
 loginform.addEventListener("submit", (e) => {
     e.preventDefault();
+    const check = checkLogin();
+    if(! check){
+        return
+    }
 
-    checkLogin();
+    const users = JSON.parse(localStorage.getItem('userDetails'))
+
+
+    // function findUserByEmail(email) {
+    //     return users.find(user => user.email === email);
+    // }
+
+
+    const existingUser = users.find(user => user.email == email.value.trim())
+
+    if(! existingUser){
+        alert('user does not exist');
+        return;
+    }
+
+    if(existingUser.password != password.value.trim()){
+        alert(' incorrect password')
+        return;
+    }
+
+    alert('login successfully')
+
+
 });
 
 function checkLogin(){
@@ -26,19 +52,26 @@ function checkLogin(){
     const passwordValue = password.value.trim();
 
     if(emailValue === ""){
-        setErrorFor(email, "email is blank");
+        setErrorFor(email, "email is required");
+        return false;
     }else if(!realEmail(emailValue)){
-        setErrorFor(email, "email is not valid");
-    }else{
+        setErrorFor(email, "email is not real");
+        return false;
+    }
+    else{
         setSuccessFor(email);
     }
 
     if(passwordValue === ""){
-        setErrorFor(password, "password is blank");
+        setErrorFor(password, "password is required");
+        return false;
     }else if(!realPassword(passwordValue)){
-        setErrorFor(password, "password is not strong");
-    }else{
+        setErrorFor(password, "has 8-characters and digit-upper-lowercase-specialCharacter");
+        return false;
+    }
+    else{
         setSuccessFor(password);
+        return true;
     }
 
     
@@ -55,7 +88,7 @@ function setErrorFor(input, message){
 }
 
 function realEmail(email){
-    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+    return /^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$/.test(email);
 }
 
 function setSuccessFor(input){
