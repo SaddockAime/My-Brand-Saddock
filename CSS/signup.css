@@ -26,7 +26,7 @@ html, body{
     justify-content: center;
     align-items: center;
     position: relative;
-    font-weight: 500;
+    font-weight: 100;
     text-decoration: none;
     transition: 0.6s;
     padding-left: 40px;
@@ -38,7 +38,7 @@ html, body{
     margin-right: 10px;
 }
 .logo p{
-    font-weight: bold;
+    font-weight: 100;
     font-size: 25px;
 }
 .iteams{
@@ -63,10 +63,10 @@ html, body{
     display: block;
     margin-left: 15px;
     width: 75%;
-    height: 4px;
+    height: 1px;
     background-color: #E4A707;
     position: absolute;
-    bottom: -5px;
+    bottom: -1px;
     transition: width 0.3s ease;
 }
 .iteams li a{
@@ -74,7 +74,7 @@ html, body{
     margin: 0 15px;
     text-decoration: none;
     transition: 0.6s;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 25px;
     color: #FFFFFF;
 }
@@ -83,10 +83,10 @@ html, body{
     display: block;
     margin-left: 15px;
     width: 0;
-    height: 3px;
+    height: 1px;
     background-color: #E4A707;
     position: absolute;
-    bottom: -5px;
+    bottom: -1.2px;
     transition: width 0.3s ease;
 }
 .iteams li a:hover::after{
@@ -181,14 +181,25 @@ main{
     color: red;
 }
 .signBut{
-    padding: 6px 25px;
+    padding: 6px 15px;
     border-radius: 10px;
     border: none;
     margin-left: 150px;
+    margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
     color: #000000;
     background-color:  #E4A707;
+}
+.orlogin{
+    font-size: 23px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.orlogin a{
+    text-decoration: none;
+    color: #E4A707;
 }
 
 /* ***************************footer************************************** */

@@ -27,7 +27,7 @@ html, body{
     justify-content: center;
     align-items: center;
     position: relative;
-    font-weight: 500;
+    font-weight: 100;
     text-decoration: none;
     transition: 0.6s;
     padding-left: 40px;
@@ -39,7 +39,7 @@ html, body{
     margin-right: 10px;
 }
 .logo p{
-    font-weight: bold;
+    font-weight: 100;
     font-size: 25px;
 }
 .iteams{
@@ -64,7 +64,7 @@ html, body{
     margin: 0 15px;
     text-decoration: none;
     transition: 0.6s;
-    font-weight: bold;
+    /* font-weight: 100; */
     font-size: 25px;
     color: #FFFFFF;
 }
@@ -72,11 +72,11 @@ html, body{
     content: '';
     display: block;
     margin-left: 15px;
-    width: 80%;
-    height: 4px;
+    width: 75%;
+    height: 1px;
     background-color: #E4A707;
     position: absolute;
-    bottom: -5px;
+    bottom: -1px;
     transition: width 0.3s ease;
 }
 .iteams li a::after{
@@ -84,10 +84,10 @@ html, body{
     display: block;
     margin-left: 15px;
     width: 0;
-    height: 3px;
+    height: 1px;
     background-color: #E4A707;
     position: absolute;
-    bottom: -5px;
+    bottom: -1.2px;
     transition: width 0.3s ease;
 }
 .iteams li a:hover::after{
@@ -111,34 +111,55 @@ main{
     text-align: center;
 }
 .addform{
+    display: flex;
     margin: auto;
     text-align: center;
 }
 .contactIntro{
+    background-image: url(image/workplace-with-computer-coffee-cup111.jpg);
+    width: 400px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.lets{
+    font-size: 25px;
+    margin-top: 30px;
     margin-bottom: 20px;
+}
+.contactIcons{
+    margin-bottom: 30px;
+    text-align: left;
+    padding-left: 85px;
+}
+.contactIcons i{
+    font-size: 18px;
+    color: #E4A707;
+    padding-right: 10px;
 }
 .add{
     background-color: #000000;
     color: #FFFFFF;
-    width: 500px;
-    height: 340px;
-    border-radius: 20px;
+    width: 450px;
+    height: 440px;
     padding-top: 20px;
     padding-left: 30px;
     text-align: center;
     justify-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .label{
     margin-top: 20px;
 }
 .contactIntro1{
     color: #E4A707;
-    font-size: 50px;
+    font-size: 25px;
     font-weight: bolder;
 }
 .contactIntro2{
-    font-size: 17px;
+    font-size: 12px;
     font-family: "Inria Sans", sans-serif;
+    margin-bottom: 30px;
 }
 .formfield{
     position: relative;
@@ -146,32 +167,38 @@ main{
     padding-bottom: 20px;
     justify-content: center;
     margin-left: 50px;
+    text-align: left;
 }
 .formfield label{
     display: inline-block;
     margin-bottom: 3px;
     font-size: 20px;
-    margin-left: -60px;
 }
 .formfield input{
-    border: 2px solid #D9D9D9;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid #D9D9D9;
     display: block;
     width: 80%;
     font-size: 15px;
     padding: 5px 0 5px 5px;
-    text-align: center;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 .formfield textarea{
-    border: 2px solid #D9D9D9;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid #D9D9D9;
     display: block;
     width: 80%;
+    height: 60px;
     font-size: 15px;
     padding: 5px 0 5px 5px;
-    text-align: center;
+    background-color: #000000;
+    color: #FFFFFF;
 }
-.formfield.success input,textarea{
+.formfield.success input{
+    border-color: #E4A707;
+}
+.formfield.success textarea{
     border-color: #E4A707;
 }
 .formfield.error input{
@@ -358,6 +385,29 @@ main{
     }
 }
 
+@media only screen and (max-width:950px){
+    .addform{
+        display: flex;
+        flex-direction: column;
+    }
+    .contactIntro{
+        width: 430px;
+        height: 410px;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .contactIcons{
+        padding-left: 110px;
+    }
+    .add{
+        width: 400px;
+        border-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
 @media only screen and (max-width:500px){
     .social{
         width: 150px;
@@ -380,17 +430,20 @@ main{
     .allright{
         font-size: 13px;
     }
+    .contactIntro{
+        width: 330px;
+    }
+    .contactIcons{
+        padding-left: 60px;
+    }
     .add{
-        width: 350px;
+        width: 300px;
     }
     .contactInfo{
         margin-top: 60px;
     }
     .formfield{
         margin-left: 10px;
-    }
-    .formfield label{
-        padding-left: 40px;
     }
     .formfield input, .formfield textarea{
         width: 85%;
@@ -404,21 +457,16 @@ main{
         font-size: 20px;
         margin-left: -10px;
     }
+    .subscribe p{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 @media only screen and (max-width:380px){
-    .add{
-        width: 280px;
-        margin-right: 0;
-    }
+    
     .formfield {
         margin-left: 8px;
-    }
-    .contactIntro1{
-        font-size: 40px;
-    }
-    .contactIntro2{
-        font-size: 15px;
     }
     .subscribe p{
         font-size: 15px;
@@ -434,9 +482,15 @@ main{
         right: 50px;
     }
 }
-@media only screen and (max-width:310px){
+@media only screen and (max-width:330px){
+    .contactIntro{
+        width: 270px;
+    }
+    .contactIcons{
+        padding-left: 30px;
+    }
     .add{
-        width: 220px;
+        width: 240px;
     }
 }
 
