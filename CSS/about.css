@@ -127,21 +127,21 @@ main{
     margin-right: 40px;     
 }
 .sub-title{
-    animation: animate 3.5s steps(8) infinite alternate;
+    /* animation: animate 3.5s steps(8) infinite alternate; */
     font-size: 60px;
     font-weight: 600;
     color: #E4A707;
-    overflow: hidden;
-    white-space: nowrap;     
+    /* overflow: hidden;
+    white-space: nowrap;      */
 }
-@keyframes animate{
+/* @keyframes animate{
     from{
         width: 0;
     }
     to{
         width: 300px;
     }
-}
+} */
 .sub-title1{
     font-family: "Inria Sans", sans-serif;
     font-size: 20px;
