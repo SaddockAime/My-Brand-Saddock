@@ -15,6 +15,10 @@ const loginform = document.getElementById("loginform");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
+// clear validation messages when typing starts
+email.addEventListener("input", clearMessage);
+password.addEventListener("input", clearMessage);
+
 loginform.addEventListener("submit", (e) => {
     e.preventDefault();
     const check = checkLogin();
@@ -85,6 +89,14 @@ function setErrorFor(input, message){
 
     loginControl.className = "loginfield error";
 
+}
+
+function clearMessage() {
+    const loginControl = this.parentElement;
+    loginControl.classList.remove("error");
+    loginControl.classList.remove("success");
+    const small = signupControl.querySelector("small");
+    small.innerText = "";
 }
 
 function realEmail(email){

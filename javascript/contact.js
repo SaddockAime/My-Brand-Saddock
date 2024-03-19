@@ -1,3 +1,5 @@
+
+//***********************side bar****************** */
 var sideme = document.getElementById("sidemenu");
         function openmenu(){
             sideme.style.right = "0";
@@ -19,6 +21,12 @@ const email = document.getElementById("email");
 const text = document.getElementById("text");
 const subscribecontent = document.getElementById("subscribecontent");
 const subscribe = document.getElementById("subscribe");
+
+// clear validation messages when typing starts
+        username.addEventListener("input", clearMessage);
+        email.addEventListener("input", clearMessage);
+        text.addEventListener("input", clearMessage);
+        subscribe.addEventListener("input", clearMessage);
 
 //validating contact form and storing all details on local storage
 form.addEventListener("submit", (e) => {
@@ -97,6 +105,14 @@ function setErrorFor(input, message){
 
 }
 
+function clearMessage() {
+    const contactControl = this.parentElement;
+    contactControl.classList.remove("error");
+    contactControl.classList.remove("success");
+    const small = signupControl.querySelector("small");
+    small.innerText = "";
+}
+
 function setTextError(text){
     return /^[a-zA-Z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]+$/.test(text);
 }
@@ -109,6 +125,8 @@ function setSuccessFor(input){
 function realEmail(email){
     return /^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$/.test(email);
 }
+
+
 
 //validating subscription form and storing all details on local storage
 subscribecontent.addEventListener("submit", (e) => {

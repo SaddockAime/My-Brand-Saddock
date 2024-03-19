@@ -1,3 +1,5 @@
+
+//***************sidebar************************* */
 var sideme = document.getElementById("sidemenu");
         function openmenu(){
             sideme.style.right = "0";
@@ -16,6 +18,11 @@ var sideme = document.getElementById("sidemenu");
         const username = document.getElementById("username");
         const email = document.getElementById("email");
         const password = document.getElementById("password");
+
+        // clear validation messages when typing starts
+        username.addEventListener("input", clearMessage);
+        email.addEventListener("input", clearMessage);
+        password.addEventListener("input", clearMessage);
         
         //validating signup form and storing info on local storage
         signUp.addEventListener("submit", (e) => {
@@ -89,6 +96,14 @@ var sideme = document.getElementById("sidemenu");
         
             signupControl.className = "signupfield error";
         
+        }
+
+        function clearMessage() {
+            const signupControl = this.parentElement;
+            signupControl.classList.remove("error");
+            signupControl.classList.remove("success");
+            const small = signupControl.querySelector("small");
+            small.innerText = "";
         }
 
         function setTextError(text){
