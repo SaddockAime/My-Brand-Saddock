@@ -109,8 +109,8 @@ function clearMessage() {
     const contactControl = this.parentElement;
     contactControl.classList.remove("error");
     contactControl.classList.remove("success");
-    const small = signupControl.querySelector("small");
-    small.innerText = "";
+    const small = contactControl.querySelector("small");
+    //small.innerText = "";
 }
 
 function setTextError(text){

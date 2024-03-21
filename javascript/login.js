@@ -95,7 +95,7 @@ function clearMessage() {
     const loginControl = this.parentElement;
     loginControl.classList.remove("error");
     loginControl.classList.remove("success");
-    const small = signupControl.querySelector("small");
+    const small = loginControl.querySelector("small");
     small.innerText = "";
 }
 
