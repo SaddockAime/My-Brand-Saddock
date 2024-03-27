@@ -329,6 +329,31 @@ main{
 .nav .fa{
     display: none;
 }
+
+@media only screen and (max-width:950px){
+    .addform{
+        display: flex;
+        flex-direction: column;
+    }
+    .contactIntro{
+        width: 430px;
+        height: 410px;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .contactIcons{
+        padding-left: 110px;
+    }
+    .add{
+        width: 400px;
+        border-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+
 @media only screen and (max-width:890px){ 
     .list-iteam{
         position: fixed;
@@ -383,28 +408,6 @@ main{
     }
 }
 
-@media only screen and (max-width:950px){
-    .addform{
-        display: flex;
-        flex-direction: column;
-    }
-    .contactIntro{
-        width: 430px;
-        height: 410px;
-        border-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    .contactIcons{
-        padding-left: 110px;
-    }
-    .add{
-        width: 400px;
-        border-radius: 0;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-}
 
 @media only screen and (max-width:500px){
     .social{
