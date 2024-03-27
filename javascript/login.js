@@ -9,6 +9,10 @@ var sideme = document.getElementById("sidemenu");
             sideme.style.right = "-200px";
         }
 
+
+       
+document.addEventListener("DOMContentLoaded", function(){
+
 //******************login validation**************************
 
 const loginform = document.getElementById("loginform");
@@ -45,6 +49,8 @@ loginform.addEventListener("submit", (e) => {
         alert('email or password is incorrect')
         return;
     }
+
+    loginform.reset();
 
     alert('login successfully')
 
@@ -121,4 +127,6 @@ function realPassword(password){
         return false;
     }
 }
+
+});
         

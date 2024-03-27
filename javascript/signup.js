@@ -11,8 +11,7 @@ var sideme = document.getElementById("sidemenu");
 
 
 
-
-
+    document.addEventListener("DOMContentLoaded", function(){
 
         const signUp = document.getElementById("signUp");
         const username = document.getElementById("username");
@@ -132,3 +131,6 @@ var sideme = document.getElementById("sidemenu");
                 return false;
             }
         }
+
+
+});

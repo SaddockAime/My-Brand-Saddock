@@ -1,4 +1,6 @@
 
+
+
 //***********************side bar****************** */
 var sideme = document.getElementById("sidemenu");
         function openmenu(){
@@ -13,7 +15,7 @@ var sideme = document.getElementById("sidemenu");
 
 
 
-
+document.addEventListener("DOMContentLoaded", function(){
 
 const form = document.getElementById("form");
 const username = document.getElementById("username");
@@ -174,4 +176,6 @@ function subscribeSuccess(input){
     const subscribeControl = input.parentElement;
     subscribeControl.className = "subscribeinput success";
 }
+
+});
 
