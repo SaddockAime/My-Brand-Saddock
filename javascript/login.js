@@ -1,14 +1,11 @@
-
-
-//********************side bar******************************
-var sideme = document.getElementById("sidemenu");
+//sideMenu
+const sideMenu = document.getElementById("sidemenu");
         function openmenu(){
-            sideme.style.right = "0";
+            sideMenu.style.right = "0";
         }
         function closemenu(){
-            sideme.style.right = "-200px";
+            sideMenu.style.right = "-200px";
         }
-
 
        
 document.addEventListener("DOMContentLoaded", function(){
@@ -33,26 +30,20 @@ loginform.addEventListener("submit", (e) => {
     const users = JSON.parse(localStorage.getItem('userDetails'))
 
 
-    // function findUserByEmail(email) {
-    //     return users.find(user => user.email === email);
-    // }
+    function findUserByEmail(email) {
+        return users.find(user => user.email === email);
+    }
 
 
     const existingUser = users.find(user => user.email == email.value.trim())
 
-    if(! existingUser){
-        alert('email or password is incorrect');
-        return;
-    }
+    
+    // try {
+    //     // const response = await fetch()
+    // } catch (error) {
+        
+    // }
 
-    if(existingUser.password != password.value.trim()){
-        alert('email or password is incorrect')
-        return;
-    }
-
-    loginform.reset();
-
-    alert('login successfully')
 
 
 });

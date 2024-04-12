@@ -1,7 +1,8 @@
-var sideme = document.getElementById("sidemenu");
+//sideMenu
+const sideMenu = document.getElementById("sidemenu");
         function openmenu(){
-            sideme.style.right = "0";
+            sideMenu.style.right = "0";
         }
         function closemenu(){
-            sideme.style.right = "-200px";
+            sideMenu.style.right = "-200px";
         }
