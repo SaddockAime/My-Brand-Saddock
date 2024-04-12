@@ -75,7 +75,6 @@ html, body{
     margin: 0 15px;
     text-decoration: none;
     transition: 0.6s;
-    /* font-weight: bold; */
     font-size: 25px;
     color: #FFFFFF;
 }
@@ -97,17 +96,15 @@ html, body{
 main{
     flex: 1;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     text-align: center;
+    margin-top: 40px;
     color: #FFFFFF;
-}
-.blog{
-    text-align: center;
 }
 .bloghead{
     color: #E4A707;
     font-size: 50px;
-    margin-top: 50px;
     font-weight: bolder;
 }
 .blogContainer{

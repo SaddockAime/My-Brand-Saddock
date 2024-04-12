@@ -64,7 +64,6 @@ html, body{
     margin: 0 15px;
     text-decoration: none;
     transition: 0.6s;
-    /* font-weight: bold; */
     font-size: 25px;
     color: #FFFFFF;
 }
@@ -100,7 +99,6 @@ html, body{
 .about{
     flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
@@ -110,12 +108,8 @@ html, body{
     text-align: left;
     margin-bottom: 80px;
 }
-main{
-    flex: 1;
-}
 .row{
-    display: flex;
-    justify-content: space-between;   
+    display: flex;   
 }
 .about-col-1 img{
     width: 360px;
@@ -127,21 +121,11 @@ main{
     margin-right: 40px;     
 }
 .sub-title{
-    /* animation: animate 3.5s steps(8) infinite alternate; */
     font-size: 60px;
     font-weight: 600;
     color: #E4A707;
-    /* overflow: hidden;
-    white-space: nowrap;      */
 }
-/* @keyframes animate{
-    from{
-        width: 0;
-    }
-    to{
-        width: 300px;
-    }
-} */
+
 .sub-title1{
     font-family: "Inria Sans", sans-serif;
     font-size: 20px;
@@ -247,11 +231,6 @@ main{
     display: none;
 }
 @media only screen and (max-width:1024px){
-    .about{
-        align-items: center;
-        margin-top: 80px;
-        margin-bottom: 60px;
-    }
     .about-col-2{
         margin-left: 40px;   
     }
@@ -370,10 +349,6 @@ main{
         flex-direction: column;
         margin-right: 0;
     }
-    .about{
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
     .about-col-1{
         padding-left: 0;
         padding-right: 0;
@@ -411,16 +386,6 @@ main{
     .about-col-2 h1{
         padding-left: 0;
     }
-    /* @keyframes animate{
-        from{
-            width: 0;
-        }
-        to{
-            width: 200px;
-        }
-    } */
-
-    
 }
 
 

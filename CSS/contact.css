@@ -93,21 +93,17 @@ html, body{
     width: 100%;
 }
 /* ***********************end of nav bar********************************** */
-main{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: #FFFFFF;
-}
+
 .contactInfo{
+    flex: 1;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-content: center;
     width: 100%;
     text-align: center;
+    color: #FFFFFF;
 }
 .addform{
     display: flex;
@@ -230,10 +226,6 @@ main{
     left: 0;
     bottom: 0;
 }
-
-
-
-
 .button{
     padding: 6px 25px;
     border-radius: 10px;
@@ -308,7 +300,6 @@ main{
     height: 33px;
     width: 250px;
     margin-right: 20px;
-
 }
 .social1{
     font-size: xx-large;
@@ -407,7 +398,6 @@ main{
         right: 0;
     }
 }
-
 
 @media only screen and (max-width:500px){
     .social{
