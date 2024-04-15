@@ -9,41 +9,40 @@ const sideMenu = document.getElementById("sidemenu");
 
 
 document.addEventListener("DOMContentLoaded", function(){
-
 const form = document.getElementById("form");
-const username = document.getElementById("username");
+const name = document.getElementById("name");
 const email = document.getElementById("email");
 const text = document.getElementById("text");
 const subscribecontent = document.getElementById("subscribecontent");
 const subscribe = document.getElementById("subscribe");
 
 // clear validation messages when typing starts
-        username.addEventListener("input", clearMessage);
+        name.addEventListener("input", clearMessage);
         email.addEventListener("input", clearMessage);
         text.addEventListener("input", clearMessage);
         subscribe.addEventListener("input", clearMessage);
 
-//validating contact form and storing all details on local storage
+//contact form
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     checkInputs();
 });
 
-function checkInputs(){
-    const usernameValue = username.value.trim();
+async function checkInputs(){
+    const nameValue = name.value.trim();
     const emailValue = email.value.trim();
     const textValue = text.value.trim();
 
-    if(usernameValue === ""){
-        setErrorFor(username, "Name is required");
+    if(nameValue === ""){
+        setErrorFor(name, "Name is required");
 
-    }else if(!setTextError(usernameValue)){
-        setErrorFor(username, "not a real name")
-    }else if(usernameValue.length < 3){
-        setErrorFor(username, "insert full name");
+    }else if(!setTextError(nameValue)){
+        setErrorFor(name, "not a real name")
+    }else if(nameValue.length < 3){
+        setErrorFor(name, "insert full name");
     }else{
-        setSuccessFor(username);
+        setSuccessFor(name);
     }
 
     if(emailValue === ""){
@@ -64,30 +63,36 @@ function checkInputs(){
         setSuccessFor(text);
     }
 
-    if(usernameValue !="" & setTextError(usernameValue) & 
-        !usernameValue.length<3 & emailValue !="" & realEmail(emailValue)
+    if(nameValue !="" & setTextError(nameValue) & 
+        !nameValue.length<3 & emailValue !="" & realEmail(emailValue)
         & textValue !="" & setTextError(textValue) & textValue.length>=15){
 
-            var existingMessage = localStorage.getItem("Messages");
+            const messageData = {
+                name: nameValue,
+                email: emailValue,
+                message: textValue
+            };
 
-            var message = existingMessage ? JSON.parse(existingMessage) : [];
-    
-            message.push({ name: usernameValue, 
-                            email: emailValue, 
-                            Message: textValue
-                        });
-            
-            var messageJSON = JSON.stringify(message);
-    
-            localStorage.setItem("Messages", messageJSON);
-    
-        form.reset();
-        console.log(message);
-        //alert("message sent successfully");
+            try {
+                const response = await fetch('http://localhost:7070/api/messages/messages', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(messageData)
+                  });
+                  
+                  const data = await response.json();
+                  console.log('Messages', data);
 
+                  if(response.status === 200){
+                    form.reset();
+                    alert("message sent successfully");
+                  }
+            } catch (error) {
+                console.log('Error', error);
+            }
     }
-    
-
 }
 
 function setErrorFor(input, message){
@@ -97,7 +102,6 @@ function setErrorFor(input, message){
     small.innerText = message;
 
     contactControl.className = "formfield error";
-
 }
 
 function clearMessage() {
@@ -115,6 +119,9 @@ function setTextError(text){
 function setSuccessFor(input){
     const contactControl = input.parentElement;
     contactControl.className = "formfield success";
+    setTimeout(() => {
+        contactControl.className = contactControl.className.replace(" success", "");
+    }, 1000);
 }
 
 function realEmail(email){
@@ -123,14 +130,14 @@ function realEmail(email){
 
 
 
-//validating subscription form and storing all details on local storage
+//subscription form
 subscribecontent.addEventListener("submit", (e) => {
     e.preventDefault();
 
     checkSubscription();
 });
 
-function checkSubscription(){
+async function checkSubscription(){
     const subscribeValue = subscribe.value.trim();
 
     if(subscribeValue ===""){
@@ -143,20 +150,29 @@ function checkSubscription(){
 
     if(subscribeValue !="" & realEmail(subscribeValue)){
 
-        var existingSubscription = localStorage.getItem("Subscription");
-
-        var subscription = existingSubscription ? JSON.parse(existingSubscription) : [];
-
-        subscription.push({
+        const subscribeData = {
             email: subscribeValue
-        });
+        };
 
-        var subscriptionJSON = JSON.stringify(subscription);
+        try {
+            const response = await fetch('http://localhost:7070/api/subscribers/subscribers', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(subscribeData)
+              });
+              
+              const data = await response.json();
+              console.log('Subscriber', data);
 
-        localStorage.setItem("Subscription", subscriptionJSON);
-
-        subscribecontent.reset();
-        console.log(subscription);
+              if(response.status === 200){
+                subscribecontent.reset();
+                alert("Subscription sent successfully");
+              }
+        } catch (error) {
+            console.log('Error', error);
+        }
     }  
 }
 

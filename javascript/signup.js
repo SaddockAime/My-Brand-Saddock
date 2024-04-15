@@ -10,7 +10,6 @@ const sideMenu = document.getElementById("sidemenu");
 
 
     document.addEventListener("DOMContentLoaded", function(){
-
         const signUp = document.getElementById("signUp");
         const username = document.getElementById("username");
         const email = document.getElementById("email");
@@ -28,14 +27,13 @@ const sideMenu = document.getElementById("sidemenu");
             checkSignIn();
         });
         
-        function checkSignIn(){
+        async function checkSignIn(){
             const usernameValue = username.value.trim();
             const emailValue = email.value.trim();
             const passwordValue = password.value.trim();
 
             if(usernameValue === ""){
                 setErrorFor(username, "your name is required");
-        
             }else if(!setTextError(usernameValue)){
                 setErrorFor(username, "insert a good username")
             }else if(usernameValue.length < 3){
@@ -43,7 +41,6 @@ const sideMenu = document.getElementById("sidemenu");
             }else{
                 setSuccessFor(username);
             }
-        
             if(emailValue === ""){
                 setErrorFor(email, "email is required");
             }else if(!realEmail(emailValue)){
@@ -51,7 +48,6 @@ const sideMenu = document.getElementById("sidemenu");
             }else{
                 setSuccessFor(email);
             }
-        
             if(passwordValue === ""){
                 setErrorFor(password, "password is required");
             }else if(!realPassword(passwordValue)){
@@ -64,32 +60,29 @@ const sideMenu = document.getElementById("sidemenu");
                 usernameValue.length > 2 & emailValue != "" & realEmail(emailValue) & 
                 passwordValue != "" & realPassword(passwordValue)){
 
-            var existingUser = localStorage.getItem("userDetails");
-
-            var userInfo = existingUser ? JSON.parse(existingUser) : [];
-
-            userInfo.push({
-               userName: usernameValue,
-               email: emailValue,
-               password: passwordValue 
-            });
-
-            var userInfoJSON = JSON.stringify(userInfo);
-
-            localStorage.setItem("userDetails", userInfoJSON);
-
+                    const signupData = {
+                        username: usernameValue,
+                        email: emailValue,
+                        password: passwordValue
+                    };
+                    try {
+                        const response = await fetch('http://localhost:7070/api/users/signup', {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify(signupData)
+                        });
+                  
+                        if (response.status === 200) {
+                            window.location.href = 'index.html';
+                          }
+                      } catch (error) {
+                        console.error('Error', error);
+                      }
             signUp.reset();
-            console.log(userInfo);
-            
-
-
-
-
+        }  
         }
-        
-            
-        }
-        
         function setErrorFor(input, message){
             const signupControl = input.parentElement;
             const small = signupControl.querySelector("small");
@@ -97,7 +90,6 @@ const sideMenu = document.getElementById("sidemenu");
             small.innerText = message;
         
             signupControl.className = "signupfield error";
-        
         }
 
         function clearMessage() {
@@ -134,6 +126,4 @@ const sideMenu = document.getElementById("sidemenu");
                 return false;
             }
         }
-
-
 });

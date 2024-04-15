@@ -9,9 +9,7 @@ const sideMenu = document.getElementById("sidemenu");
 
        
 document.addEventListener("DOMContentLoaded", function(){
-
-//******************login validation**************************
-
+//login
 const loginform = document.getElementById("loginform");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -20,32 +18,35 @@ const password = document.getElementById("password");
 email.addEventListener("input", clearMessage);
 password.addEventListener("input", clearMessage);
 
-loginform.addEventListener("submit", (e) => {
+loginform.addEventListener("submit", async (e) => {
     e.preventDefault();
     const check = checkLogin();
     if(! check){
         return
     }
 
-    const users = JSON.parse(localStorage.getItem('userDetails'))
-
-
-    function findUserByEmail(email) {
-        return users.find(user => user.email === email);
-    }
-
-
-    const existingUser = users.find(user => user.email == email.value.trim())
-
+    const loginData = {
+        email: email.value,
+        password: password.value
+      };
+  
+      try {
+          const response = await fetch('http://localhost:7070/api/users/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(loginData)
+          });
     
-    // try {
-    //     // const response = await fetch()
-    // } catch (error) {
-        
-    // }
-
-
-
+          const data = await response.json();
+    
+          if (response.status === 200) {
+            window.location.href = 'index.html';
+          }
+        } catch (error) {
+          console.error('Error', error);
+        }
 });
 
 function checkLogin(){
@@ -74,8 +75,6 @@ function checkLogin(){
         setSuccessFor(password);
         return true;
     }
-
-    
 }
 
 function setErrorFor(input, message){
@@ -118,6 +117,5 @@ function realPassword(password){
         return false;
     }
 }
-
 });
         
