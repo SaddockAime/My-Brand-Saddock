@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Inria Serif", sans-serif;
+}
+body{
+    /* min-height: 100vh;
+    overflow-x: hidden; */
+    background-color: #161616;
+}
+.dash-container{
+    width: 100%;
+    position: relative;
+}
+.navigation{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.navigation1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 20px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.navigation1 img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.navigation2{
+    display: flex;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 10px;
+    cursor: pointer;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;    
+}
+.navigation2 li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    margin-right: 15px;
+}
+.navigation2.click{
+    background-color: #161616;
+}
+.navigation2 li a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.dash-titles{
+    margin-top: 30px;
+    margin-left: 45px;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #161616;
+    transition: 0.5s;
+}
+.top{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top i{
+    color: #FFFFFF;
+}
+.table-container{
+    color: #FFFFFF;
+    max-width: 900px;
+}
+.table {
+    max-width: 900px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table thead {
+    background: #000000;
+  }
+  .table thead tr th{
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  .table thead tr th:nth-child(1){
+    text-align: left;
+    border-top-left-radius: 10px;
+  }
+  .table thead tr th:nth-child(4){
+    text-align: right;
+    border-top-right-radius: 10px;
+  }
+  
+  .table tbody tr td {
+    font-size: 1rem;
+    padding: 0.8rem;
+    text-align: center;
+  }
+  .table tbody tr td:nth-child(1){
+      text-align: left;
+  }
+  .table tbody tr td:nth-child(4){
+    text-align: right;
+  }
+  
+  .table tbody tr td button{
+    padding: 0.4rem;
+    margin-left: 1.2rem;
+    cursor: pointer;
+  }
