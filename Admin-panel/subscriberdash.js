@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>${count}</td>
               <td>${sub.email}</td>
               <td>
-                <button class="button-trash" id="deleteUser" data-id="${sub._id}"><i class="fa fa-solid fa-trash"></i></button>
+                <button class="button-trash" id="deleteSubscriber" data-id="${sub._id}"><i class="fa fa-solid fa-trash"></i></button>
               </td>
             </tr>
           `;
@@ -34,4 +34,38 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
     fetchSubs();
+
+
+
+    const deleteSubscriber = async (event) => {
+      try {
+          const subscriberId = event.target.dataset.id;
+  
+          const confirmDelete = window.confirm("Are you sure you want to delete this subscriber?");
+  
+          if (confirmDelete) {
+              const response = await fetch(`http://localhost:7070/api/subscribers/deleteSubscriber/${subscriberId}`, {
+                  method: "DELETE",
+              });
+  
+              if (response.ok) {
+                  event.target.closest("tr").remove();
+                  console.log("subscriber deleted successfully");
+              } else {
+                  console.error("Error deleting subscriber:", response.statusText);
+              }
+          }
+      } catch (error) {
+          console.error("Error deleting subscriber:", error);
+      }
+  };
+
+  document.addEventListener("click", (e) => {
+    // e.preventDefault();
+    
+    if (e.target && e.target.id === "deleteSubscriber") {
+      deleteSubscriber(e);
+    }     
+  });
+
 });

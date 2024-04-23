@@ -4,7 +4,11 @@
   
     const fetchUsers = async () => {
       try {
+        const token = localStorage.getItem('token')
         const response = await fetch("http://localhost:7070/api/users/viewusers", {
+          headers:{
+            'Authorization': `Bearer ${token}`
+          },
             method: 'GET',
         });
         const responseData = await response.json();
@@ -42,12 +46,17 @@
   const deleteUser = async (event) => {
     try {
         const userId = event.target.dataset.id;
+        const token = localStorage.getItem('token')
 
         const confirmDelete = window.confirm("Are you sure you want to delete this user?");
 
         if (confirmDelete) {
             const response = await fetch(`http://localhost:7070/api/users/deleteUser/${userId}`, {
+              headers:{
+                'Authorization': `Bearer ${token}`
+              },
                 method: "DELETE",
+
             });
 
             if (response.ok) {
