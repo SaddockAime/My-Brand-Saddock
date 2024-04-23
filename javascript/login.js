@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
 const loginform = document.getElementById("loginform");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const messageDiv = document.getElementById("message");
 
 // clear validation messages when typing starts
 email.addEventListener("input", clearMessage);
@@ -39,10 +40,12 @@ loginform.addEventListener("submit", async (e) => {
             body: JSON.stringify(loginData)
           });
     
-          const data = await response.json();
-    
-          if (response.status === 200) {
-            window.location.href = 'index.html';
+          const responseData = await response.json();
+          messageDiv.textContent = responseData.message;
+          if (response.ok) {
+            const token = responseData.data.token;
+            localStorage.setItem('token',token); 
+            window.location.href = './Admin-panel/userdash.html';
           }
         } catch (error) {
           console.error('Error', error);

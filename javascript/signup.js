@@ -14,6 +14,7 @@ const sideMenu = document.getElementById("sidemenu");
         const username = document.getElementById("username");
         const email = document.getElementById("email");
         const password = document.getElementById("password");
+        const messageDiv = document.getElementById("message");
 
         // clear validation messages when typing starts
         username.addEventListener("input", clearMessage);
@@ -73,9 +74,14 @@ const sideMenu = document.getElementById("sidemenu");
                           },
                           body: JSON.stringify(signupData)
                         });
+
+                        const responseData = await response.json();
+                        messageDiv.textContent = responseData.message;
                   
-                        if (response.status === 200) {
-                            window.location.href = 'index.html';
+                        if (response.ok) {
+                            const token = responseData.data.token;
+                            localStorage.setItem('token', token);
+                            window.location.href = 'login.html';
                           }
                       } catch (error) {
                         console.error('Error', error);

@@ -74,7 +74,7 @@ async function checkInputs(){
             };
 
             try {
-                const response = await fetch('http://localhost:7070/api/messages/messages', {
+                const response = await fetch('http://localhost:7070/api/messages/createMessage', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ async function checkSubscription(){
         };
 
         try {
-            const response = await fetch('http://localhost:7070/api/subscribers/subscribers', {
+            const response = await fetch('http://localhost:7070/api/subscribers/createSubscriber', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
@@ -166,7 +166,7 @@ async function checkSubscription(){
               const data = await response.json();
               console.log('Subscriber', data);
 
-              if(response.status === 200){
+              if(response.ok){
                 subscribecontent.reset();
                 alert("Subscription sent successfully");
               }
