@@ -191,7 +191,7 @@ html, body{
     color: #FFFFFF;
 }
 .formfield.success input{
-    border-color: #E4A707;
+    border-color: green;
 }
 .formfield.success textarea{
     border-color: #E4A707;
@@ -217,7 +217,7 @@ html, body{
     position: absolute;
     top: 33px;
     right: 90px;
-    color: #E4A707;
+    color: green;
     visibility: hidden;
 }
 .formfield small{
@@ -254,7 +254,7 @@ html, body{
     border-color: red;
 }
 .subscribeinput.success input{
-    border-color: #E4A707;
+    border-color: green;
 }
 
 .subscribeform button{

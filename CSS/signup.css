@@ -156,7 +156,7 @@ main{
     position: absolute;
     top: 33px;
     right: 75px;
-    color: #E4A707;
+    color: green;
     visibility: hidden;
 }
 .signupfield small{
@@ -165,7 +165,7 @@ main{
     visibility: hidden;
 }
 .signupfield.success input{
-    border-color: #E4A707;
+    border-color: green;
 }
 .signupfield.error input{
     border-color: red;
