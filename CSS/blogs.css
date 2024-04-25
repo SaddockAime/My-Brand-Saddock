@@ -108,44 +108,50 @@ main{
     font-weight: bolder;
 }
 .blogContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-right: 25px;
+    color: #FFFFFF;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
 }
 .blog1{
     display: block;
     justify-content: center;
+    flex-direction: column;
+    margin: auto;
     text-align: left;
-    margin-left: 25px;
 }
 .blog1 .blogimage{
+    margin-top: 40px;
+    max-width: 800px;
+    height: 500px;
     width: 100%;
     border-radius: 15px;
 }
 .blogTitle{
-    font-size: 25px;
+    color: #E4A707;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
+    text-align: left;
 }
-.blogcont{
-    font-size: 20px;
+.blogDescription{
+    font-size: 17px;
     margin-top: 10px;
     font-family: "Inria Sans", sans-serif;
 }
-.blogdate{
+.blogcont{
     font-size: 15px;
     margin-top: 10px;
+    font-family: "Inria Sans", sans-serif;
+    text-align: justify;
+    display: none;
 }
-.blog button{
-    margin-top: 30px;
-    font-size: 15px;
-    padding: 15px 30px;
-    color: #000000;
-    background-color: #E4A707;
-    border: none;
-    border-radius: 15px;
-    margin-bottom: 80px;
+.blogdate{
+    font-size: 12px;
+    margin-top: 10px;
 }
 
 /* ***************************footer************************************** */
@@ -256,16 +262,10 @@ main{
         right: 0;
     }
     .blogContainer{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 30px;
-        margin-right: 100px;
-        margin-left: 100px;
-        text-align: center;
+        
     }
     .blog1 .blogimage{
-        width: 100%;
+        
     }
     .blogdate{
         margin-bottom: 50px;
@@ -297,12 +297,8 @@ main{
         font-size: 50px;
     }
     .blogContainer{
-        margin-right: 50px;
-        margin-left: 30px;
+       
     }
-    .blog button{
-        font-size: 20px;
-        padding: 10px 20px;
-    }
+    
 
 }

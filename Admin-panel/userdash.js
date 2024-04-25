@@ -5,7 +5,7 @@
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('token')
-        const response = await fetch("http://localhost:7070/api/users/viewusers", {
+        const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/users/viewusers", {
           headers:{
             'Authorization': `Bearer ${token}`
           },
@@ -51,7 +51,7 @@
         const confirmDelete = window.confirm("Are you sure you want to delete this user?");
 
         if (confirmDelete) {
-            const response = await fetch(`http://localhost:7070/api/users/deleteUser/${userId}`, {
+            const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/users/deleteUser/${userId}`, {
               headers:{
                 'Authorization': `Bearer ${token}`
               },

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const fetchSubs = async () => {
       try {
-        const response = await fetch("http://localhost:7070/api/subscribers/viewSubscribers", {
+        const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/subscribers/viewSubscribers", {
             method: 'GET',
         });
         const responseData = await response.json();
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const confirmDelete = window.confirm("Are you sure you want to delete this subscriber?");
   
           if (confirmDelete) {
-              const response = await fetch(`http://localhost:7070/api/subscribers/deleteSubscriber/${subscriberId}`, {
+              const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/subscribers/deleteSubscriber/${subscriberId}`, {
                   method: "DELETE",
               });
   

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="messagedash.css">
+    <link rel="stylesheet" href="blogdash.css">
 </head>
 <body>
     <!-- ****************************Navigation**************************** -->
@@ -24,11 +24,11 @@
                 <p>Saddock</p>
             </div>
             <div class="dash-titles">
-            <ul class="navigation2">
+            <ul class="navigation2 click">
                 <li><i class="fa fa-newspaper-o"></i></li>
                 <li><a href="blogdash.html">Blogs</a></li>
             </ul>
-            <ul class="navigation2 click">
+            <ul class="navigation2">
                 <li><i class="fa fa-solid fa-comment"></i></li>
                 <li><a href="messagedash.html">Messages</a></li>
             </ul>
@@ -48,40 +48,41 @@
 
         </div>
         <div class="main">
-            <div class="top">
-                <div class="side-top">
-                    <i class="fa fa-solid fa-bars"></i>
-                </div>
+            <div class="blog">
+                <p class="bloghead">Blogs</p>
+                    <div class="blog1">
+                        <img class="blogimage" src="" alt="">
+                        <p class="blogTitle"></p>
+                        <p class="blogDescription"></p>
+                        <p class="blogcont"></p>
+                        <p class="blogdate"></p>
+                        <button class="button-trash" id="deleteBlog"><i class="fa fa-solid fa-trash"></i></button>
+                    </div>
             </div>
-            <div class="table-container">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Message</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Saddock Kabandana</td>
-                        <td>Saddock@gmail.com</td>
-                        <td>ekmfqwmfqkmfkemfkqemfkqwlmfekfmeqfknekmfqkeckqcewfefewfewfwehf</td>
-                        <td>
-                          <button class="button-trash" id="deleteMessage"><i class="fa fa-solid fa-trash"></i></button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <button class="newBlog" type="submit" onclick="showAdd()">Add Blog</button>
+            
+            <div class="addblog" id="addBlog">
+                <h1>Add Blog post</h1>
+                <form enctype="multipart/form-data" id="addblogform" class="addblogform">
+                    <label for="title">Add Title: </label><br>
+                    <input name="title" type="text" id="title" placeholder="BlogTitle" ><br>
+                    <label for="description">Add Description: </label><br>
+                    <textarea name="description"  id="description" cols="20" rows="3" ></textarea><br>
+                    <label for="content">Add Content:</label><br>
+                    <textarea name="content"  id="content" cols="30" rows="20" ></textarea><br>
+                    <label for="blogImage">Blog image:</label><br>
+                    <input type="file" name="image"  id="blogImage" >
+                    <img id="preview"> <br>
+                    <span class="add">
+                        <button id="add" type="submit">Add</button>
+                        <button id="cancel" onclick="cancelAdd()">Cancel</button>
+                    </span>
+                </form>
             </div>
         </div>
-        
     </div>
 
 
-    <script src="messagedash.js"></script>
+    <script src="blogdash.js"></script>
 </body>
 </html>

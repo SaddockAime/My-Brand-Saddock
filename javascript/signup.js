@@ -67,7 +67,7 @@ const sideMenu = document.getElementById("sidemenu");
                         password: passwordValue
                     };
                     try {
-                        const response = await fetch('http://localhost:7070/api/users/signup', {
+                        const response = await fetch('https://my-brand-saddock-backend.onrender.com/api/users/signup', {
                           method: 'POST',
                           headers: {
                             'Content-Type': 'application/json'

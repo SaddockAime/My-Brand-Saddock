@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const fetchMessages = async () => {
       try {
-        const response = await fetch("http://localhost:7070/api/messages/viewMessages", {
+        const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/messages/viewMessages", {
             method: 'GET',
         });
         const responseData = await response.json();
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const confirmDelete = window.confirm("Are you sure you want to delete this message?");
 
         if (confirmDelete) {
-            const response = await fetch(`http://localhost:7070/api/messages/deleteMessage/${messageId}`, {
+            const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/messages/deleteMessage/${messageId}`, {
                 method: "DELETE",
             });
 

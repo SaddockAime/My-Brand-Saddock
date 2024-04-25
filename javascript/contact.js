@@ -74,7 +74,7 @@ async function checkInputs(){
             };
 
             try {
-                const response = await fetch('http://localhost:7070/api/messages/createMessage', {
+                const response = await fetch('https://my-brand-saddock-backend.onrender.com/api/messages/createMessage', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ async function checkSubscription(){
         };
 
         try {
-            const response = await fetch('http://localhost:7070/api/subscribers/createSubscriber', {
+            const response = await fetch('https://my-brand-saddock-backend.onrender.com/api/subscribers/createSubscriber', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
