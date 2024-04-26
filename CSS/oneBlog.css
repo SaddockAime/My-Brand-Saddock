@@ -147,18 +147,10 @@ main{
     margin-top: 10px;
     font-family: "Inria Sans", sans-serif;
     text-align: justify;
-    display: none;
 }
 .blogdate{
     font-size: 16px;
     margin-top: 10px;
-}
-.button-blog{
-    margin-top: 20px;
-    cursor: pointer;
-    width: 150px;
-    margin-bottom: 40px;
-    cursor: pointer;
 }
 
 /* ***************************footer************************************** */

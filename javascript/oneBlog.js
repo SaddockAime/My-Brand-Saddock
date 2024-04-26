@@ -1,29 +1,34 @@
-//sideMenu
 const sideMenu = document.getElementById("sidemenu");
 function openmenu(){
     sideMenu.style.right = "0";
     }
 function closemenu(){
-    sideMenu.style.right = "-200px";
+    ideMenu.style.right = "-200px";
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const blogContainer = document.querySelector(".blog1");
+    const fetchBlog = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
 
-
-    const fetchBlogs = async () => {
+    if (!id){
+        console.error('No ID found in the URL parameters');
+        return;
+    }
+    console.log(id)
+        
         try {
-            const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/blogs/viewBlogs", {
+            const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/viewBlogById/${id}`, {
                 method: 'GET',
             });
             const responseData = await response.json();
 
             console.log("Data from backend:", responseData);
             blogContainer.innerHTML = "";
-            const blogs = responseData.data;
+            const blog = responseData.data;
 
-            blogs.forEach((blog) => {
+          
                 const blogElement = document.createElement("div");
                 blogElement.classList.add("blog1");
 
@@ -33,27 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="blogDescription">${blog.description}</p>
                     <p class="blogcont">${blog.content}</p>
                     <p class="blogdate">Published ${new Date(blog.date).toDateString()}</p>
-                    <button class="button-blog" id="viewBlog" onclick="navigatToOneBlogPage('${blog._id}')"><i class="fa fa-solid fa-eye"></i></button>
                 `;
-                blogElement.addEventListener('click', () => {
-                    console.log('blog-clidke');
-                    console.log(blog._id)
-                    const blog1 = blog._id;
-                    window.location.href = `oneBlog.html?id=${blog1}`;
-                })
-                
+
                 blogContainer.appendChild(blogElement);
-            });
+       
         } catch (error) {
             console.error("Error fetching blogs:", error);
         }
     };
 
-    fetchBlogs();
+    fetchBlog();
     
 });
-
-
-const navigatToOneBlogPage = (_id) => {
-    window.location.href = `oneBlog.html?${_id}`;
-};
