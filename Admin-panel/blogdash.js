@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const fetchBlogs = async () => {
         try {
-            const response = await fetch("http://localhost:7070/api/blogs/viewBlogs", {
+            const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/blogs/viewBlogs", {
                 method: 'GET',
             });
             const responseData = await response.json();
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
 
             if (confirmDelete) {
-                const response = await fetch(`http://localhost:7070/api/blogs/deleteBlog/${blogId}`, {
+                const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/deleteBlog/${blogId}`, {
                     method: "DELETE",
                 });
 
@@ -81,7 +81,7 @@ const addNewBlog = async (event) => {
     console.log(formData);
 
     try {
-        const response = await fetch("http://localhost:7070/api/blogs/createBlogs", {
+        const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/blogs/createBlogs", {
             method: 'POST',
 
             body: formData
@@ -217,7 +217,7 @@ const editBlog = async (event) => {
             formData.append('content', editContent);
             formData.append('image', editImageInput);
 
-            const response = await fetch(`http://localhost:7070/api/blogs/updateBlog/${blogId}`, {
+            const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/updateBlog/${blogId}`, {
                 method: "PUT",
                 body: formData,
             });
