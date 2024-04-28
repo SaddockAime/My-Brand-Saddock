@@ -15,6 +15,7 @@ const email = document.getElementById("email");
 const text = document.getElementById("text");
 const subscribecontent = document.getElementById("subscribecontent");
 const subscribe = document.getElementById("subscribe");
+const messageDiv = document.getElementById("message");
 
 // clear validation messages when typing starts
         name.addEventListener("input", clearMessage);
@@ -164,6 +165,7 @@ async function checkSubscription(){
               });
               
               const data = await response.json();
+              messageDiv.textContent = data.message;
               console.log('Subscriber', data);
 
               if(response.ok){
