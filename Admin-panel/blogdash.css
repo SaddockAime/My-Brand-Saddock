@@ -118,6 +118,12 @@ body{
     font-size: 12px;
     margin-top: 10px;
 }
+.button-edit{
+    margin-top: 20px;
+    cursor: pointer;
+    width: 150px;
+    margin-bottom: 40px;
+}
 .button-trash{
     margin-top: 20px;
     cursor: pointer;
