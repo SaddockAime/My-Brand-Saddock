@@ -45,7 +45,9 @@ loginform.addEventListener("submit", async (e) => {
           if (response.ok) {
             const token = responseData.data.token;
             localStorage.setItem('token',token); 
-            window.location.href = './Admin-panel/userdash.html';
+            //window.location.href = './Admin-panel/userdash.html';
+            window.open('./Admin-panel/userdash.html', '_blank');
+            loginform.reset();
           }
         } catch (error) {
           console.error('Error', error);
