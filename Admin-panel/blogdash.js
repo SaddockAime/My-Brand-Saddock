@@ -1,11 +1,8 @@
 
 const addBlog = document.getElementById('addBlog');
-
-
 function showAdd() {
     addBlog.style.display = 'block';
 }
-
 function cancelAdd() {
     addBlog.style.display = 'none';
 }
@@ -20,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             const responseData = await response.json();
 
-            console.log("Data from backend:", responseData);
+            //console.log("Data from backend:", responseData);
             blogContainer.innerHTML = "";
             const blogs = responseData.data;
 
@@ -60,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (response.ok) {
                     event.target.closest(".blog1").remove();
-                    console.log("Blog deleted successfully");
+                    //console.log("Blog deleted successfully");
                 } else {
                     console.error("Error deleting blog:", response.statusText);
                 }
@@ -71,45 +68,64 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Function to handle adding a new blog
-const addNewBlog = async (event) => {
-    event.preventDefault();
-
-    const form = document.getElementById('addblogform');
-
-    const formData = new FormData(form)
-
-    console.log(formData);
-
-    try {
-        const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/blogs/createBlogs", {
-            method: 'POST',
-
-            body: formData
-        });
-
-        if (response.ok) {
-            const newBlog = await response.json();
-            console.log("New blog added:", newBlog);
-            cancelAdd();
-            window.location.reload();
-        } else {
-            console.error("Error adding blog:", response.statusText);
+    const addNewBlog = async (event) => {
+        event.preventDefault();
+    
+        const form = document.getElementById('addblogform');
+        const titleInput = document.getElementById('title');
+        const descInput = document.getElementById('description');
+        const contentInput = document.getElementById('content');
+        const imageInput = document.getElementById('blogImage');
+    
+        // Check if all fields are filled and an image is selected
+        if (
+            titleInput.value.trim() === '' ||
+            descInput.value.trim() === '' ||
+            contentInput.value.trim() === '' ||
+            imageInput.files.length === 0
+        ) {
+            alert("Please fill in all fields and select an image.");
+            return;
         }
-        console.log(response)
-    } catch (error) {
-        console.error("Error adding blog:", error);
-    }
-
-};
-
-
-//*******************update blog**************************************
+    
+        const formData = new FormData(form);
+    
+        try {
+            const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/blogs/createBlogs", {
+                method: 'POST',
+                body: formData
+            });
+    
+            if (response.ok) {
+                const newBlog = await response.json();
+                console.log("New blog added:", newBlog);
+                cancelAdd();
+                window.location.reload();
+            } else {
+                console.error("Error adding blog:", response.statusText);
+            }
+            console.log(response);
+        } catch (error) {
+            console.error("Error adding blog:", error);
+        }
+    };
+    
+//update(edit) the blog post
 const editBlog = async (event) => {
     try {
         const blogId = event.target.dataset.id;
-        console.log('Blog ID:', blogId);
+        //console.log('Blog ID:', blogId);
 
-        // Create a form for editing the blog post
+        const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/viewBlogById/${blogId}`);
+        const blogData = await response.json();
+
+        if (!response.ok) {
+            throw new Error(`Error fetching blog details: ${response.statusText}`);
+        }
+
+        const { title, description, content } = blogData.data;
+
+        //form for editing the blog post
         const editFormContainer = document.createElement("div");
         editFormContainer.style.position = "fixed";
         editFormContainer.style.display = "flex";
@@ -126,7 +142,7 @@ const editBlog = async (event) => {
         editFormContainer.style.borderRadius = "10px";
         editFormContainer.style.marginLeft = "60px";
 
-        // Create form elements
+        //form elements
         const form = document.createElement("form");
         form.id = "editBlogForm";
 
@@ -139,6 +155,7 @@ const editBlog = async (event) => {
         titleInput.id = "editTitle";
         titleInput.name = "editTitle";
         titleInput.required = true;
+        titleInput.value = title; // Populate title field with blog title
 
         const descLabel = document.createElement("label");
         descLabel.textContent = "Edit Description:";
@@ -148,6 +165,7 @@ const editBlog = async (event) => {
         descInput.id = "editDescription";
         descInput.name = "editDescription";
         descInput.required = true;
+        descInput.textContent = description; // Populate description field with blog description
 
         const contentLabel = document.createElement("label");
         contentLabel.textContent = "Edit Content:";
@@ -157,6 +175,7 @@ const editBlog = async (event) => {
         contentInput.id = "editContent";
         contentInput.name = "editContent";
         contentInput.required = true;
+        contentInput.textContent = content; // Populate content field with blog content
 
         const imageLabel = document.createElement("label");
         imageLabel.textContent = "Edit Image:";
@@ -200,22 +219,35 @@ const editBlog = async (event) => {
         // Add the form container to the body
         document.body.appendChild(editFormContainer);
 
-        submitButton.addEventListener("click", async (e) => {
+        
+        form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             const editTitleInput = document.getElementById('editTitle');
-            const editTitle = editTitleInput.value.trim();
             const editDescInput = document.getElementById('editDescription');
-            const editDesc = editDescInput.value.trim();
             const editContentInput = document.getElementById('editContent');
+            const editImageInput = document.getElementById('editImage');
+
+            if (
+                editTitleInput.value.trim() === '' ||
+                editDescInput.value.trim() === '' ||
+                editContentInput.value.trim() === '' ||
+                editImageInput.files.length === 0
+            ) {
+                alert("Please fill in all fields and select an image.");
+                return;
+            }
+
+            const editTitle = editTitleInput.value.trim();
+            const editDesc = editDescInput.value.trim();
             const editContent = editContentInput.value.trim();
-            const editImageInput = document.getElementById('editImage').files[0];
+            const editImage = editImageInput.files[0];
             
             const formData = new FormData();
             formData.append('title', editTitle);
             formData.append('description', editDesc);
             formData.append('content', editContent);
-            formData.append('image', editImageInput);
+            formData.append('image', editImage);
 
             const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/updateBlog/${blogId}`, {
                 method: "PUT",
@@ -240,20 +272,15 @@ const editBlog = async (event) => {
     }
 };
 
-
-
 document.addEventListener("click", (e) => {
     if (e.target && e.target.classList.contains("delete-blog")) {
             deleteBlog(e);
     }
-
     if (e.target && e.target.id === "add") {
             addNewBlog(e);
     }
-
     if (e.target && e.target.id === "editBlog") {
         editBlog(e);
 }
-
     });
 });

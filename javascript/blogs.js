@@ -10,6 +10,8 @@ function closemenu(){
 
 document.addEventListener("DOMContentLoaded", function () {
     const blogContainer = document.querySelector(".blog1");
+    const loading = document.getElementById("loading");
+    loading.style.display = "block"; // Display loading style
 
 
     const fetchBlogs = async () => {
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             const responseData = await response.json();
 
-            console.log("Data from backend:", responseData);
+            //console.log("Data from backend:", responseData);
             blogContainer.innerHTML = "";
             const blogs = responseData.data;
 
@@ -36,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <button class="button-blog" id="viewBlog" onclick="navigatToOneBlogPage('${blog._id}')"><i class="fa fa-solid fa-eye"></i></button>
                 `;
                 blogElement.addEventListener('click', () => {
-                    console.log('blog-clidke');
-                    console.log(blog._id)
+                    //console.log('blog-clidke');
+                    //console.log(blog._id)
                     const blog1 = blog._id;
                     window.location.href = `oneBlog.html?id=${blog1}`;
                 })
@@ -46,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         } catch (error) {
             console.error("Error fetching blogs:", error);
+        } finally {
+            loading.style.display = "none"; // Hide loading style after fetching data
         }
     };
 
