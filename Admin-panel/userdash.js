@@ -5,6 +5,9 @@
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('token')
+        if(!token){
+          window.location.href = '../login.html';
+        }
         const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/users/viewusers", {
           headers:{
             'Authorization': `Bearer ${token}`
@@ -47,7 +50,9 @@
     try {
         const userId = event.target.dataset.id;
         const token = localStorage.getItem('token')
-
+        if(!token){
+          window.location.href = '../login.html';
+        }
         const confirmDelete = window.confirm("Are you sure you want to delete this user?");
 
         if (confirmDelete) {

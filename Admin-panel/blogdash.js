@@ -47,11 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const deleteBlog = async (event) => {
         try {
             const blogId = event.target.dataset.id;
-
+            const token = localStorage.getItem('token')
+            if(!token){
+                window.location.href = '../login.html';
+              }
             const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
 
             if (confirmDelete) {
                 const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/deleteBlog/${blogId}`, {
+                    headers:{
+                        'Authorization': `Bearer ${token}`
+                      },
                     method: "DELETE",
                 });
 
@@ -91,7 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = new FormData(form);
     
         try {
+            const token = localStorage.getItem('token')
+            if(!token){
+                window.location.href = '../login.html';
+              }
             const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/blogs/createBlogs", {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                  },
                 method: 'POST',
                 body: formData
             });
@@ -115,6 +128,10 @@ const editBlog = async (event) => {
     try {
         const blogId = event.target.dataset.id;
         //console.log('Blog ID:', blogId);
+        const token = localStorage.getItem('token')
+        if(!token){
+            window.location.href = '../login.html';
+          }
 
         const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/viewBlogById/${blogId}`);
         const blogData = await response.json();
@@ -250,6 +267,9 @@ const editBlog = async (event) => {
             formData.append('image', editImage);
 
             const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/updateBlog/${blogId}`, {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                  },
                 method: "PUT",
                 body: formData,
             });

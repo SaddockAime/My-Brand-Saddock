@@ -3,7 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const fetchSubs = async () => {
       try {
+        const token = localStorage.getItem('token')
+        if(!token){
+          window.location.href = '../login.html';
+        }
         const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/subscribers/viewSubscribers", {
+          headers:{
+            'Authorization': `Bearer ${token}`
+          },
             method: 'GET',
         });
         const responseData = await response.json();
@@ -40,11 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const deleteSubscriber = async (event) => {
       try {
           const subscriberId = event.target.dataset.id;
-  
+          const token = localStorage.getItem('token')
+          if(!token){
+            window.location.href = '../login.html';
+          }
           const confirmDelete = window.confirm("Are you sure you want to delete this subscriber?");
   
           if (confirmDelete) {
               const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/subscribers/deleteSubscriber/${subscriberId}`, {
+                headers:{
+                  'Authorization': `Bearer ${token}`
+                },
                   method: "DELETE",
               });
   

@@ -8,6 +8,8 @@ function closemenu(){
 
 document.addEventListener("DOMContentLoaded", function () {
     const blogContainer = document.querySelector(".blog1");
+    const loading = document.getElementById("loading");
+    loading.style.display = "block";
     const fetchBlog = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
@@ -44,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
        
         } catch (error) {
             console.error("Error fetching blogs:", error);
+        } finally {
+            loading.style.display = "none"; // Hide loading style after fetching data
         }
     };
 

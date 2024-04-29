@@ -4,7 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const fetchMessages = async () => {
       try {
+        const token = localStorage.getItem('token')
+        if(!token){
+          window.location.href = '../login.html';
+        }
         const response = await fetch("https://my-brand-saddock-backend.onrender.com/api/messages/viewMessages", {
+          headers:{
+            'Authorization': `Bearer ${token}`
+          },
             method: 'GET',
         });
         const responseData = await response.json();
@@ -42,11 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const deleteMessage = async (event) => {
     try {
         const messageId = event.target.dataset.id;
-
+        const token = localStorage.getItem('token')
+        if(!token){
+          window.location.href = '../login.html';
+        }
         const confirmDelete = window.confirm("Are you sure you want to delete this message?");
 
         if (confirmDelete) {
             const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/messages/deleteMessage/${messageId}`, {
+              headers:{
+                'Authorization': `Bearer ${token}`
+              },
                 method: "DELETE",
             });
 
