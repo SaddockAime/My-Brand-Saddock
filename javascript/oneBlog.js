@@ -3,7 +3,7 @@ function openmenu(){
     sideMenu.style.right = "0";
     }
 function closemenu(){
-    ideMenu.style.right = "-200px";
+    sideMenu.style.right = "-200px";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error('No ID found in the URL parameters');
         return;
     }
-    console.log(id)
+    //console.log(id)
         
         try {
             const response = await fetch(`https://my-brand-saddock-backend.onrender.com/api/blogs/viewBlogById/${id}`, {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             const responseData = await response.json();
 
-            console.log("Data from backend:", responseData);
+            //console.log("Data from backend:", responseData);
             blogContainer.innerHTML = "";
             const blog = responseData.data;
 
