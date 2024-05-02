@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="blogDescription">${blog.description}</p>
                     <p class="blogcont">${blog.content}</p>
                     <p class="blogdate">Published ${new Date(blog.date).toDateString()}</p>
-                    <button class="button-blog" id="viewBlog" onclick="navigatToOneBlogPage('${blog._id}')"><i class="fa fa-solid fa-eye"></i></button>
+                    <p class="button-blog" id="viewBlog" onclick="navigatToOneBlogPage('${blog._id}')">Read More</p>
                 `;
                 blogElement.addEventListener('click', () => {
                     //console.log('blog-clidke');

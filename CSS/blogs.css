@@ -168,9 +168,10 @@ main{
 .button-blog{
     margin-top: 20px;
     cursor: pointer;
-    width: 150px;
     margin-bottom: 40px;
-    cursor: pointer;
+    font-size: 20px;
+    color: #E4A707;
+    text-decoration: underline;
 }
 
 /* ***************************footer************************************** */
