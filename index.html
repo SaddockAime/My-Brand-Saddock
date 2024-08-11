@@ -1,78 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="My personal webpage">
-    <meta name="author" content="Saddock Kabandana">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>HOME</title>
-    <link rel="stylesheet" href="CSS/index.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="My personal webpage" />
+    <meta name="author" content="Saddock Kabandana" />
+    <link
+      rel="shortcut icon"
+      href="images/SaddockAime1.jpg"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+  </head>
+
+  <body>
     <!-- *****************nav bar************************************* -->
-    <header>
     <div class="nav">
-        <div class="logo">
-            <img src="images/SaddockAime1.jpg" alt="">
-            <p>Saddock</p>
-        </div>
-        <div class="list-iteam" id="sidemenu">
-            <ul class="iteams">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <!-- <li><a href="login.html">Login</a></li> -->
-                <li><i class="fa fa-solid fa-bars" onclick="closemenu()"></i></li>
-            </ul>
-        </div>
-        <i class="fa fa-solid fa-bars" onclick="openmenu()"></i>
+      <div class="logo">
+        <img src="images/SaddockAime1.jpg" alt="" />
+        <p>Saddock</p>
+      </div>
+      <div class="list-iteam" id="sidemenu">
+        <ul class="iteams">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><i class="fa fa-solid fa-bars" onclick="closemenu()"></i></li>
+        </ul>
+      </div>
+      <i class="fa fa-solid fa-bars" onclick="openmenu()"></i>
     </div>
-    </header>
     <!-- ********************intro*************************************** -->
     <div class="intro">
-        <main>
-        <img src="images/SaddockAime1.jpg" alt="">
-        <p class="name">Hi, I'm<span class="name1">Saddock</span></p></p><br>
-        <p class="text">I like working on the front-end of the web. This is my site, where I blog <br>
-            and share whatever side projects I've been working on.</p>
-        <p class="findout">Find out more on my <a href="projects.html">projects>></a></p>
-        </main>
+      <img src="images/saddock12324.jpg" alt="" />
+      <div class="intro-text">
+        <p class="name">Hi, I'm<span class="name1">Saddock</span></p>
+        <br />
+        <p class="text">
+          Full-stack developer with a passion for crafting exceptional digital
+          experiences. My expertise spans both the front-end and back-end,
+          allowing me to transform ideas into functional and visually appealing
+          web applications.
+        </p>
+        <a href="#contact"><button class="button">Contact Me</button></a>
+      </div>
+    </div>
+    <!-- ----------about---------- -->
+    <div class="about" id="about">
+      <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+        <p class="sub-title1">
+          I'm Saddock Kabandana, a university student with a keen interest in
+          engineering and web development. I aim to share my experiences,
+          challenges, and achievements as I progress through my studies and
+          beyond.
+        </p>
+        <div class="tab-titles">
+          <a class="tab-links active-link" onclick="opentab('skills', event)"
+            >Skills</a
+          >
+          <a class="tab-links" onclick="opentab('education', event)"
+            >Education</a
+          >
+          <a class="tab-links" onclick="opentab('hobbies', event)">Hobbies</a>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>UI/UX</span><br />Designing web/app interfaces</li>
+            <li>
+              <span>Front end skills</span><br />HTML, CSS & SCSS, JavaScript,
+              React, React Native, Bootstrap, Tailwind, Figma, TypeScript
+            </li>
+            <li>
+              <span>Back end skills</span><br />Node.js, MongoDB, PostgreSQL,
+              MySQL, REST APIs
+            </li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="education">
+          <ul>
+            <li>
+              <span>2021 - Current</span><br />BSC (HONS) in Electronic and
+              Telecommunication Eng.
+            </li>
+            <li><span>2017 - 2019</span><br />High school diploma</li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="hobbies">
+          <ul>
+            <li><span>Sports</span><br />Watching football games</li>
+            <li>
+              <span>Free Time</span><br />Reading books and watching movies.
+            </li>
+            <li>
+              <span>Travelling</span><br />Travelling around the world looking
+              for new experiences.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-col-1">
+        <img src="images/about-aime1.png" alt="" />
+      </div>
+    </div>
+    <!-- *******************projects************************************** -->
+    <div class="projects" id="projects">
+      <p class="myProjects">Projects</p>
+      <div class="myProjectsContents">
+        <div class="image-container">
+          <img class="hover-image" src="images/ninjas1.png" alt="" />
+          <img class="hover-image" src="images/ninjas2.png" alt="" />
+          <img class="hover-image" src="images/ninjas3.png" alt="" />
+          <img class="hover-image" src="images/ninjas4.png" alt="" />
+          <img class="hover-image" src="images/ninjas5.png" alt="" />
+        </div>
+        <div class="project-text">
+          <p class="project-text1">E-commerce Ninjas Website</p>
+          <p class="project-text2">
+            E-commerce Ninjas is a dynamic and scalable online shopping platform
+            developed as part of a collaborative project with Andela. The
+            platform aims to provide a seamless shopping experience, catering to
+            various user roles, including Admin, Merchant, and Customer. The
+            project focused on delivering an intuitive user interface, secure
+            transactions, and robust role-based access control (RBAC) to manage
+            different functionalities based on user roles.
+          </p>
+          <a
+            href="https://e-commerce-ninja-fn-staging.netlify.app"
+            class="project-text3"
+            target="_blank"
+            >visit &rarr;</a
+          >
+        </div>
+      </div>
+    </div>
+    <!--****************contact***************************************** -->
+    <div class="contactInfo" id="contact">
+      <div class="addform">
+        <div class="contactIntro">
+          <p class="lets">Let's get in touch!</p>
+          <p>
+            I am open for any suggestion <br />
+            or just to have a chat!
+          </p>
+          <br />
+          <br />
+          <p class="contactIcons">
+            <i class="fa fa-solid fa-location-arrow"></i>Address: Kigali,Rwanda
+          </p>
+          <p class="contactIcons">
+            <i class="fa fa-solid fa-phone"></i>Phone: +250788938717
+          </p>
+          <p class="contactIcons">
+            <i class="fa fa-solid fa-paper-plane"></i>Email: aimegetz@gmail.com
+          </p>
+        </div>
+        <form class="add" id="form">
+          <p class="contactIntro1">CONTACT ME</p>
+          <p class="contactIntro2">Don't hesitate to reach out to me!</p>
+          <div class="formfield">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter your name" />
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error</small>
+          </div>
+          <div class="formfield">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error</small>
+          </div>
+          <div class="formfield">
+            <label>Message</label>
+            <textarea
+              type="text"
+              id="text"
+              placeholder="Enter your message"
+            ></textarea>
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error</small>
+          </div>
+          <div>
+            <button type="submit" id="send" class="send-button">Send</button>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- **********************footer************************************* -->
     <footer>
-    <div class="footer">
+      <div class="footer">
         <div class="container">
-            <div class="contact">
-                <p><i class="fa fa-solid fa-at"></i>aimegetz@gmail.com</p>
-                <p><i class="fa fa-solid fa-phone-square"></i>+250788938717</p>
+          <div class="contact">
+            <p><i class="fa fa-solid fa-at"></i>aimegetz@gmail.com</p>
+            <p><i class="fa fa-solid fa-phone-square"></i>+250788938717</p>
+          </div>
+          <div class="social">
+            <div class="social1">
+              <a href="https://www.facebook.com/saddockAime/" target="_blank"
+                ><i class="fa fa-facebook-square"></i
+              ></a>
+              <a href="https://www.instagram.com/aime_saddock/" target="_blank"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="https://twitter.com/SaddockAime" target="_blank"
+                ><i class="fa fa-twitter-square"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/saddock-kabandana-89b914237/"
+                target="_blank"
+                ><i class="fa fa-linkedin-square"></i
+              ></a>
+              <a href="https://github.com/SaddockAime" target="_blank"
+                ><i class="fa fa-github-square"></i
+              ></a>
             </div>
-            <div class="social">
-                <div class="social1">
-                    <a href="https://www.facebook.com/saddockAime/"><i class="fa fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/aime_saddock/"><i class="fa fa-instagram"></i></a>
-                    <a href="https://twitter.com/SaddockAime"><i class="fa fa-twitter-square"></i></a>
-                    <a href="https://www.linkedin.com/in/saddock-kabandana-89b914237/"><i class="fa fa-linkedin-square"></i></a>
-                    <a href="https://github.com/SaddockAime"><i class="fa fa-github-square" ></i></a>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="copyright">
-                 <P>©2024 Saddock’s webpage</P>
-                 <p class="allright">All rights Reserved.</p>
+          <p>©2024 Saddock’s webpage</p>
+          <p class="allright">All rights Reserved.</p>
         </div>
-    </div>
+      </div>
     </footer>
 
     <script src="javascript/index.js"></script>
-    
-</body>
+  </body>
 </html>
