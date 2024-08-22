@@ -10,21 +10,21 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: #000000;
+  background-color: #fff;
 }
 /* **************navigation bar*************************************  */
 .nav {
-  background-color: #000000;
+  background-color: #fff;
   width: 100%;
   height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: 0.6s;
-  color: #ffffff;
+  color: #000;
   position: fixed;
-  z-index: 500;
-  box-shadow: 0 1px 12px hsl(0, 0%, 0%, 0.6);
+  z-index: 16;
+  box-shadow: 0 1px 12px hsl(0, 0%, 0%, 0.2);
 }
 .logo {
   display: flex;
@@ -63,7 +63,7 @@ body {
   text-decoration: none;
   transition: 0.6s;
   font-size: 25px;
-  color: #ffffff;
+  color: #000;
 }
 .iteams li a:hover {
   color: #e4a707;
@@ -78,12 +78,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: #000;
   padding: 130px 100px 100px 100px;
   text-align: left;
 }
 .intro img {
-  width: 410px;
+  width: 450px;
   height: 380px;
   border-radius: 3px;
 }
@@ -120,10 +120,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: #000;
   padding: 90px;
   text-align: left;
-  background-color: #151515;
+  background-color: #e8e8e8;
 }
 .about-col-1 img {
   width: 500px;
@@ -194,7 +194,7 @@ body {
 }
 .myProjectsContents {
   margin: 50px 100px 0 100px;
-  color: #ffffff;
+  color: #000;
   text-align: left;
 }
 .image-container {
@@ -210,6 +210,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 8px;
+    border: 2px solid #e4a707;
     opacity: 0;
     animation: fadeInOut 15s infinite;
   }
@@ -273,7 +274,7 @@ body {
   margin-bottom: 80px;
 }
 
-/* ***************************contacct me************************************** */
+/* ***************************contact me************************************** */
 .contactInfo {
   flex: 1;
   justify-content: center;
@@ -283,8 +284,8 @@ body {
   align-content: center;
   width: 100%;
   text-align: center;
-  color: #ffffff;
-  background-color: #151515;
+  color: #fff;
+  background-color: #e8e8e8;
 }
 .addform {
   display: flex;
@@ -292,7 +293,7 @@ body {
   text-align: center;
 }
 .contactIntro {
-  background-image: url(image/workplace-with-computer-coffee-cup111.jpg);
+  background-image: url(image/workplace-with-computer-coffee-cup112.jpg);
   width: 400px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -313,8 +314,8 @@ body {
   padding-right: 10px;
 }
 .add {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #fff;
+  color: #000;
   width: 450px;
   height: 440px;
   padding-top: 20px;
@@ -352,24 +353,24 @@ body {
 }
 .formfield input {
   border: none;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #000;
   display: block;
   width: 80%;
   font-size: 15px;
   padding: 5px 0 5px 5px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #fff;
+  color: #000;
 }
 .formfield textarea {
   border: none;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #000;
   display: block;
   width: 80%;
   height: 60px;
   font-size: 15px;
   padding: 5px 0 5px 5px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #fff;
+  color: #000;
 }
 .formfield.success input {
   border-color: green;
