@@ -14,3 +14,5 @@ This project is a personal webpage showcasing my portfolio, projects, and contac
 ## Contact
 - Email: aimegetz@gmail.com
 - Phone: +250788938717
+
+[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
